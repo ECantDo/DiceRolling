@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Initial UI">
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="More functionality!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiceRollerUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dice_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/dice_logic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +246,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754807899375</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="UI looking good">
+      <option name="closed" value="true" />
+      <created>1754811583211</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1754811583211</updated>
+    </task>
+    <task id="LOCAL-00011" summary="More functionality!">
+      <option name="closed" value="true" />
+      <created>1754812904636</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1754812904636</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -256,6 +273,8 @@
     <MESSAGE value="Signing logs in dice logic" />
     <MESSAGE value="AHHHH" />
     <MESSAGE value="Initial UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial UI" />
+    <MESSAGE value="UI looking good" />
+    <MESSAGE value="More functionality!" />
+    <option name="LAST_COMMIT_MESSAGE" value="More functionality!" />
   </component>
 </project>

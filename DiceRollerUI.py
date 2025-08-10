@@ -99,7 +99,9 @@ class DiceRollerUI(ctk.CTk):
         self.entry_sides.grid(row=0, column=3)
 
         # Placeholder for roll button
-        self.btn_roll = ctk.CTkButton(self.top_frame, text="Roll Dice", font=used_font)
+        self.btn_roll = ctk.CTkButton(self.top_frame, text="Roll Dice", font=used_font,
+                                      command=self.perform_roll
+                                      )
         self.btn_roll.pack(pady=(10, 15), fill="x")
 
         # Scrollable text box for logs/results
@@ -149,22 +151,40 @@ class DiceRollerUI(ctk.CTk):
             num_dice = int(self.entry_num_dice.get())
             sides = int(self.entry_sides.get())
         except ValueError:
-            self.append_log("Please enter valid numbers for dice and sides.")
+            self.append_log("Please enter valid numbers for dice and sides.", error=True)
             return
 
         if not self.server_url:
             # Local roll
             dice, total = roll_dice(num_dice, sides)
-            self.append_log(f"Local roll: Dice: {dice} Total: {total}")
+            if dice is None:
+                self.append_log(f"Local roll: Total: {total}")
+            else:
+                self.append_log(f"Local roll: Total: {total}  Dice: {dice} ")
         else:
             # TODO: Call server roll function here
-            self.append_log(f"Rolling on server at {self.server_url} (not implemented yet)")
+            self.append_log(f"Rolling on server at {self.server_url} (not implemented yet)", error=True)
         pass
 
-    def append_log(self, text):
+    def append_log(self, text, error=False):
         self.log_text.configure(state="normal")
-        self.log_text.insert("end", text + "\n")
-        self.log_text.see("end")
+        current = self.log_text.get("1.0", "end-1c")  # get current text without trailing newline
+        new_entry = text + "\n"
+
+        # Insert new text at the top:
+        updated_text = new_entry + current
+
+        # Clear and insert all text
+        self.log_text.delete("1.0", "end")
+        self.log_text.insert("1.0", updated_text)
+
+        # Highlight errors by tagging them red
+        self.log_text.tag_remove("error", "1.0", "end")  # clear old error tags
+        if error:
+            # Tag the new entry (line 1) with "error"
+            self.log_text.tag_add("error", "1.0", f"1.{len(new_entry)}")
+            self.log_text.tag_config("error", foreground="red")
+
         self.log_text.configure(state="disabled")
         pass
 
