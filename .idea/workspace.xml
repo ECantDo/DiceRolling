@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Forgot to display dice side counts" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Fixing when to check for the secret key">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/DiceRollerUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dice_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/dice_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/roller_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/script_updater.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/settings_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/start_client.bat" beforeDir="false" afterPath="$PROJECT_DIR$/start/start_client.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/start_server.bat" beforeDir="false" afterPath="$PROJECT_DIR$/start/start_server.bat" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,12 +43,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ECantDo"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ECantDo&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ECantDo/DiceRolling.git&quot;,
@@ -73,7 +85,7 @@
       <recent name="E:\PycharmProjects\DiceRoller" />
     </key>
   </component>
-  <component name="RunManager" selected="Batch.start_server (1)">
+  <component name="RunManager" selected="Batch.start_client">
     <configuration name="start_client (1)" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,7 +135,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_key.py" />
+      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\generate_key.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,7 +158,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/roller_app.py" />
+      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\roller_app.py" />
       <option name="PARAMETERS" value="--mode client" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -413,7 +425,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754820452483</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fixing when to check for the secret key">
+      <option name="closed" value="true" />
+      <created>1754821420654</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1754821420654</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Fixing when to check for the secret key">
+      <option name="closed" value="true" />
+      <created>1754821440520</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1754821440520</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -460,6 +488,7 @@
     <MESSAGE value="Updated to use a now secret key for secure logging :)" />
     <MESSAGE value="Forgot to store dice side counts" />
     <MESSAGE value="Forgot to display dice side counts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forgot to display dice side counts" />
+    <MESSAGE value="Fixing when to check for the secret key" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing when to check for the secret key" />
   </component>
 </project>

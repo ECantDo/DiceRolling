@@ -1,8 +1,8 @@
 import customtkinter as ctk
 import requests
 
-from dice_logic import roll_dice
-from settings_manager import SettingsManager
+from src.helper.dice_logic import roll_dice
+from src.helper.settings_manager import SettingsManager
 
 ctk.set_appearance_mode("dark")  # "dark" or "light"
 ctk.set_default_color_theme("blue")

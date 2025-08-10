@@ -5,10 +5,10 @@ from flask import Flask, request, jsonify
 import os
 import time
 from pathlib import Path
-from dice_logic import roll_dice, sign_entry, append_log
+from helper.dice_logic import roll_dice, sign_entry, append_log
 
 app = Flask(__name__)
-LOG_FILE = Path("roll_log_server.ndjson")
+LOG_FILE = Path("../../roll_log_server.ndjson")
 
 SECRET_KEY = b"this is not a valid key"
 

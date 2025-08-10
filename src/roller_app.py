@@ -1,13 +1,10 @@
 # file: roller_app.py
-import threading
 
-import DiceRollerUI
-import client_module
-import dice_logic
+from UI import DiceRollerUI
+from helper import script_updater
 import argparse
 
-import script_updater
-import server_module
+from src.server_functions import server_module
 
 
 def run_server():
