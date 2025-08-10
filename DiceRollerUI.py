@@ -162,9 +162,9 @@ class DiceRollerUI(ctk.CTk):
             # Local roll
             dice, total = roll_dice(num_dice, sides)
             if dice is None:
-                self.append_log(f"Local roll: Total: {total}")
+                self.append_log(f"Local roll: Total: {total} | {num_dice}d{sides}")
             else:
-                self.append_log(f"Local roll: Total: {total}  Dice: {dice} ")
+                self.append_log(f"Local roll: Total: {total} | {num_dice}d{sides} | Dice: {dice}")
         else:
             payload = {
                 "player": self.username,
@@ -184,9 +184,9 @@ class DiceRollerUI(ctk.CTk):
                 else:
                     dice = data["dice"]
                     if dice is None:
-                        self.append_log(f"Total: {data['result']}")
+                        self.append_log(f"Total: {data['result']} | {num_dice}d{sides}")
                     else:
-                        self.append_log(f"Total: {data['result']}  Dice: {dice} ")
+                        self.append_log(f"Total: {data['result']} | {num_dice}d{sides} | Dice: {dice} ")
 
             except Exception as e:
                 self.append_log(f"Error contacting server: {e}", error=True)
