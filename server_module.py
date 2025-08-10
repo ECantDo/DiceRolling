@@ -14,7 +14,6 @@ SECRET_KEY = os.environ.get("DICE_LOG_SECRET", "replace_me_with_secure_key").enc
 @app.route("/roll", methods=["POST"])
 def roll_endpoint():
     print("Received roll request:", request.json)
-    # existing code ...
 
     data = request.json
     player = data.get("player", "Unknown")
@@ -27,8 +26,6 @@ def roll_endpoint():
         return jsonify({"error": "Invalid dice parameters"}), 400
 
     dice, result = roll_dice(num_dice, num_sides)
-    if dice is None:
-        dice = [-1]
     timestamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
     entry = {

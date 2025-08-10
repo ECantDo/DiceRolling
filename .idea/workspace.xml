@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Local dice rolling working">
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Fresh logic to log the exact dice rolls">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dice_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/dice_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiceRollerUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754813465492</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fresh logic to log the exact dice rolls">
+      <option name="closed" value="true" />
+      <created>1754814158406</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1754814158406</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -284,6 +294,7 @@
     <MESSAGE value="UI looking good" />
     <MESSAGE value="More functionality!" />
     <MESSAGE value="Local dice rolling working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Local dice rolling working" />
+    <MESSAGE value="Fresh logic to log the exact dice rolls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fresh logic to log the exact dice rolls" />
   </component>
 </project>

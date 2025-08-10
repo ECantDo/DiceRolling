@@ -1,4 +1,5 @@
 import customtkinter as ctk
+import requests
 
 from dice_logic import roll_dice
 from settings_manager import SettingsManager
@@ -21,7 +22,8 @@ class DiceRollerUI(ctk.CTk):
         self.settings = SettingsManager()
 
         self.username = self.settings.get("username", None)
-        self.server_url = None
+        self.server_url = self.settings.get("server_url", None)
+        self.logs: list[tuple[str, bool]] = []
 
         self.title("Dice Roller Client UI Prototype :3")
         self.geometry("550x600")
@@ -129,6 +131,8 @@ class DiceRollerUI(ctk.CTk):
         self.wait_window(dialog)
         if dialog.new_value:
             self.server_url = dialog.new_value
+            if not self.server_url.endswith("/roll"):
+                self.server_url = self.server_url.rstrip("/") + "/roll"
 
     def open_name_dialog(self):
         self.menu_frame.place_forget()
@@ -162,28 +166,52 @@ class DiceRollerUI(ctk.CTk):
             else:
                 self.append_log(f"Local roll: Total: {total}  Dice: {dice} ")
         else:
-            # TODO: Call server roll function here
-            self.append_log(f"Rolling on server at {self.server_url} (not implemented yet)", error=True)
+            payload = {
+                "player": self.username,
+                "num_dice": num_dice,
+                "num_sides": sides
+            }
+            try:
+                # Timeout is in seconds
+                resp = requests.post(self.server_url, json=payload, timeout=5,
+                                     verify=False)
+                resp.raise_for_status()
+                data: dict = resp.json()
+
+                error = data.get("error", "")
+                if error:
+                    self.append_log(f"Error: {data['error']}", error=True)
+                else:
+                    dice = data["dice"]
+                    if dice is None:
+                        self.append_log(f"Total: {data['result']}")
+                    else:
+                        self.append_log(f"Total: {data['result']}  Dice: {dice} ")
+
+            except Exception as e:
+                self.append_log(f"Error contacting server: {e}", error=True)
+
         pass
 
     def append_log(self, text, error=False):
         self.log_text.configure(state="normal")
-        current = self.log_text.get("1.0", "end-1c")  # get current text without trailing newline
-        new_entry = text + "\n"
+        self.logs.insert(0, (text, error))
+        self.logs = self.logs[:18]  # Only keep the last 18? -> Remove if want more
 
-        # Insert new text at the top:
-        updated_text = new_entry + current
-
-        # Clear and insert all text
+        # Clear all text first
         self.log_text.delete("1.0", "end")
-        self.log_text.insert("1.0", updated_text)
 
-        # Highlight errors by tagging them red
-        self.log_text.tag_remove("error", "1.0", "end")  # clear old error tags
-        if error:
-            # Tag the new entry (line 1) with "error"
-            self.log_text.tag_add("error", "1.0", f"1.{len(new_entry)}")
-            self.log_text.tag_config("error", foreground="red")
+        # Rebuild text with coloring
+        for i, (line_text, is_error) in enumerate(self.logs):
+            self.log_text.insert(f"{i + 1}.0", line_text + "\n")
+            if is_error:
+                # Tag line with red foreground, approximate line range
+                start = f"{i + 1}.0"
+                end = f"{i + 1}.end"
+                self.log_text.tag_add("error", start, end)
+
+        # Configure tag style here or once during init
+        self.log_text.tag_config("error", foreground="red")
 
         self.log_text.configure(state="disabled")
         pass
