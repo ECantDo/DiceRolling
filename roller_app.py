@@ -1,26 +1,32 @@
+# file: roller_app.py
+import client_module
 import dice_logic
+import argparse
+
+import server_module
+
+
+def run_server():
+    # Server
+    server_module.run_server()
+    pass
+
+
+def run_client():
+    # Client
+    client_module.run_client()
+    pass
+
 
 if __name__ == "__main__":
-    while True:
-        number = input("Number of dice: ")
-        try:
-            number = int(number)
-        except Exception as e:
-            if number.lower == "exit":
-                break
-            print("Number was not a number...")
-            continue
-            pass
-        sides = input("Sides on Dice: ")
-        try:
-            sides = int(sides)
-        except Exception as e:
-            if sides.lower() == "exit":
-                break
-            print("Sides was not a number...")
-            continue
+    arg_choice = ["server", "client"]
 
-            pass
+    parser = argparse.ArgumentParser(description="Dice Roller App")
+    parser.add_argument("--mode", choices=arg_choice, required=True, help="Run as server or client")
 
-        dice_logic.compute_roll(number, sides)
-        print()
+    args = parser.parse_args()
+
+    if args.mode == arg_choice[0]:
+        run_server()
+    elif args.mode == arg_choice[1]:
+        run_client()

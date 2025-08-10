@@ -1,1 +1,0 @@
-pyinstaller LargeDiceRNG.py --onefile

@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="File structuring" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Signing logs in dice logic">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/start_client.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/start_server.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildRNG.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dice_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/dice_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roll_logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/roller_app.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,19 +43,74 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Batch.start_client (1).executor": "Run",
+    "Batch.start_client.executor": "Run",
+    "Batch.start_server.executor": "Run",
     "Python.gui.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/PycharmProjects/DiceRoller"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/PycharmProjects/DiceRoller/dist"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\PycharmProjects\DiceRoller\dist" />
       <recent name="E:\PycharmProjects\DiceRoller" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="roller_app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Batch.start_server">
+    <configuration name="start_client (1)" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="DiceRoller" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="E:\PycharmProjects\DiceRoller\dist" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="start_client.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="DiceRoller" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="E:\PycharmProjects\DiceRoller\start" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="start_client.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="start_server" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="DiceRoller" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="./start" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="start_server.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="roller_app - client" type="PythonConfigurationType" factoryName="Python">
+      <module name="DiceRoller" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (DiceRoller)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/roller_app.py" />
+      <option name="PARAMETERS" value="--mode client" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="roller_app - server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DiceRoller" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -56,8 +123,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\roller_app.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/roller_app.py" />
+      <option name="PARAMETERS" value="--mode server" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -65,9 +132,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Batch.start_client" />
+      <item itemvalue="Batch.start_client (1)" />
+      <item itemvalue="Batch.start_server" />
+      <item itemvalue="Python.roller_app - client" />
+      <item itemvalue="Python.roller_app - server" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.roller_app" />
+        <item itemvalue="Batch.start_server" />
+        <item itemvalue="Batch.start_client" />
+        <item itemvalue="Batch.start_client (1)" />
+        <item itemvalue="Python.roller_app - server" />
       </list>
     </recent_temporary>
   </component>
@@ -111,12 +188,39 @@
       <option name="project" value="LOCAL" />
       <updated>1754792566837</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Moved main to the app file">
+      <option name="closed" value="true" />
+      <created>1754792676580</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1754792676581</updated>
+    </task>
+    <task id="LOCAL-00005" summary="New rolling functions.&#10;&#10;One master dice roll function, to separate 2 dice rollers, one for a very large number of dice, one for a smaller amount.">
+      <option name="closed" value="true" />
+      <created>1754794532339</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1754794532339</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Signing logs in dice logic">
+      <option name="closed" value="true" />
+      <created>1754794713974</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1754794713974</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Copying files from original project to make better" />
     <MESSAGE value="File structuring" />
-    <option name="LAST_COMMIT_MESSAGE" value="File structuring" />
+    <MESSAGE value="Moved main to the app file" />
+    <MESSAGE value="New rolling functions.&#10;&#10;One master dice roll function, to separate 2 dice rollers, one for a very large number of dice, one for a smaller amount." />
+    <MESSAGE value="Signing logs in dice logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Signing logs in dice logic" />
   </component>
 </project>

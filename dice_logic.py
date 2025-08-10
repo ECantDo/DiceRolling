@@ -52,3 +52,11 @@ def append_log(entry: dict, log_file: Path):
             os.fsync(f.fileno())
         except Exception:
             pass
+
+
+def verify_entry_signature(entry: dict, secret_key: bytes) -> bool:
+    signature = entry.get("signature")
+    if not signature:
+        return False
+    expected = sign_entry(entry, secret_key)
+    return hmac.compare_digest(signature, expected)
