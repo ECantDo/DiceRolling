@@ -9,9 +9,6 @@ import argparse
 import script_updater
 import server_module
 
-VERSION = "1.1.0"
-
-
 def run_server():
     # Server
     server_module.run_server()
