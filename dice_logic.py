@@ -35,7 +35,20 @@ def roll_dice(num_dice, sides) -> int:
     return roll_small_dice(num_dice, sides)
 
 
-def compute_roll(dice_number: int, dice_sides: int = 6):
-    print(f"Expected: {dice_number * ((1 + dice_sides) / 2)}")
-    print(f"Result: {roll_large_dice(dice_number, dice_sides)}")
-    pass
+def sign_entry(entry: dict, secret_key: bytes) -> str:
+    entry_to_sign = {k: v for k, v in entry.items() if k != "signature"}
+    msg = json.dumps(entry_to_sign, sort_keys=True, separators=(",", ":")).encode()
+    signature = hmac.new(secret_key, msg, hashlib.sha256).hexdigest()
+    return signature
+
+
+def append_log(entry: dict, log_file: Path):
+    line = json.dumps(entry, separators=(",", ":")) + "\n"
+    with log_file.open("a", encoding="utf-8") as f:
+        f.write(line)
+        f.flush()
+        try:
+            import os
+            os.fsync(f.fileno())
+        except Exception:
+            pass
