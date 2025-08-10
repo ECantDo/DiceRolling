@@ -162,9 +162,9 @@ class DiceRollerUI(ctk.CTk):
             # Local roll
             dice, total = roll_dice(num_dice, sides)
             if dice is None:
-                self.append_log(f"Local roll: Total: {total}")
+                self.append_log(f"Local roll: Total: {total}  {num_dice}d{sides}")
             else:
-                self.append_log(f"Local roll: Total: {total}  Dice: {dice} ")
+                self.append_log(f"Local roll: Total: {total} {num_dice}d{sides} Dice: {dice}")
         else:
             payload = {
                 "player": self.username,
