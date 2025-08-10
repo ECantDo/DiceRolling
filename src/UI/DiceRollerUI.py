@@ -154,6 +154,11 @@ class DiceRollerUI(ctk.CTk):
         try:
             num_dice = int(self.entry_num_dice.get())
             sides = int(self.entry_sides.get())
+
+            if num_dice > 100_000:
+                raise ValueError
+            if sides > 200:
+                raise ValueError
         except ValueError:
             self.append_log("Please enter valid numbers for dice and sides.", error=True)
             return
@@ -256,7 +261,7 @@ class InputDialog(ctk.CTkToplevel):
         ctk.CTkButton(self, text="OK", command=self.on_ok, font=fonts[2]).pack(pady=15)
 
     def on_ok(self):
-        self.new_value = self.entry.get()
+        self.new_value = self.entry.get()[:20]
         self.destroy()
 
 

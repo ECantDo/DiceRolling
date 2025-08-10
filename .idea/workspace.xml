@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Fixing when to check for the secret key">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/DiceRollerUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dice_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/dice_logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/roller_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/script_updater.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/settings_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/start_client.bat" beforeDir="false" afterPath="$PROJECT_DIR$/start/start_client.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/start_server.bat" beforeDir="false" afterPath="$PROJECT_DIR$/start/start_server.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/DiceRollerUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,12 +158,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Batch.start_client" />
       <item itemvalue="Batch.start_client (1)" />
+      <item itemvalue="Batch.start_client" />
       <item itemvalue="Batch.start_server (1)" />
       <item itemvalue="Batch.start_server" />
-      <item itemvalue="Python.roller_app - client" />
       <item itemvalue="Python.generate_key" />
+      <item itemvalue="Python.roller_app - client" />
     </list>
     <recent_temporary>
       <list>
