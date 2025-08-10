@@ -1,4 +1,7 @@
 # file: roller_app.py
+import threading
+
+import DiceRollerUI
 import client_module
 import dice_logic
 import argparse
@@ -14,11 +17,18 @@ def run_server():
 
 def run_client():
     # Client
-    client_module.run_client()
+    print("Starting GUI...")
+    DiceRollerUI.start_gui()
+    print("Closed GUI")
+    # gui_thread = threading.Thread(target=DiceRollerUI.start_gui, daemon=True)
+    # gui_thread.start()
+
+    # client_module.run_client()
     pass
 
 
 if __name__ == "__main__":
+    print("Starting program...")
     arg_choice = ["server", "client"]
 
     parser = argparse.ArgumentParser(description="Dice Roller App")
