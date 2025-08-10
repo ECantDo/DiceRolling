@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Fixing when to check for the secret key">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Reorganizing files">
+      <change afterPath="$PROJECT_DIR$/src/UI/LoggerUI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helper/universal_fonts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/DiceRollerUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dice_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/dice_logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/roller_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/script_updater.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/settings_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/start_client.bat" beforeDir="false" afterPath="$PROJECT_DIR$/start/start_client.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/start_server.bat" beforeDir="false" afterPath="$PROJECT_DIR$/start/start_server.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +30,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="betterUI" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,37 +56,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Batch.start_client (1).executor&quot;: &quot;Run&quot;,
-    &quot;Batch.start_client.executor&quot;: &quot;Run&quot;,
-    &quot;Batch.start_server (1).executor&quot;: &quot;Run&quot;,
-    &quot;Batch.start_server.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_key.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.roller_app - client.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/PycharmProjects/DiceRoller/dist&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Batch.start_client (1).executor": "Run",
+    "Batch.start_client.executor": "Run",
+    "Batch.start_server (1).executor": "Run",
+    "Batch.start_server.executor": "Run",
+    "Python.LoggerUI.executor": "Run",
+    "Python.generate_key.executor": "Run",
+    "Python.gui.executor": "Run",
+    "Python.roller_app - client.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "server__ui",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/PycharmProjects/DiceRoller/dist"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\PycharmProjects\DiceRoller\dist" />
       <recent name="E:\PycharmProjects\DiceRoller" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\PycharmProjects\DiceRoller\src\server_functions" />
+      <recent name="E:\PycharmProjects\DiceRoller\src\helper" />
+      <recent name="E:\PycharmProjects\DiceRoller\src" />
+      <recent name="E:\PycharmProjects\DiceRoller\helper" />
+      <recent name="E:\PycharmProjects\DiceRoller\UI" />
+    </key>
   </component>
-  <component name="RunManager" selected="Batch.start_client">
-    <configuration name="start_client (1)" type="BatchConfigurationType" factoryName="Batch" temporary="true">
-      <module name="DiceRoller" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="./dist" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="start_client.bat" />
-      <option name="PARAMETERS" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.LoggerUI">
     <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,6 +113,28 @@
       <option name="PARAMETERS" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="LoggerUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DiceRoller" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/UI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/UI/LoggerUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="generate_key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DiceRoller" />
       <option name="ENV_FILES" value="" />
@@ -135,7 +148,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\generate_key.py" />
+      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\helper\generate_key.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -169,19 +182,19 @@
     </configuration>
     <list>
       <item itemvalue="Batch.start_client" />
-      <item itemvalue="Batch.start_client (1)" />
       <item itemvalue="Batch.start_server (1)" />
       <item itemvalue="Batch.start_server" />
       <item itemvalue="Python.roller_app - client" />
+      <item itemvalue="Python.LoggerUI" />
       <item itemvalue="Python.generate_key" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.LoggerUI" />
         <item itemvalue="Batch.start_server (1)" />
         <item itemvalue="Batch.start_client" />
         <item itemvalue="Batch.start_server" />
         <item itemvalue="Python.generate_key" />
-        <item itemvalue="Batch.start_client (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -441,7 +454,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754821440520</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Reorganizing files">
+      <option name="closed" value="true" />
+      <created>1754861680619</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1754861680619</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -489,6 +510,7 @@
     <MESSAGE value="Forgot to store dice side counts" />
     <MESSAGE value="Forgot to display dice side counts" />
     <MESSAGE value="Fixing when to check for the secret key" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing when to check for the secret key" />
+    <MESSAGE value="Reorganizing files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganizing files" />
   </component>
 </project>
