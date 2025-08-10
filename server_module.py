@@ -7,7 +7,7 @@ from pathlib import Path
 from dice_logic import roll_dice, sign_entry, append_log
 
 app = Flask(__name__)
-LOG_FILE = Path("roll_log.ndjson")
+LOG_FILE = Path("roll_log_server.ndjson")
 SECRET_KEY = os.environ.get("DICE_LOG_SECRET", "replace_me_with_secure_key").encode()
 
 
@@ -26,7 +26,9 @@ def roll_endpoint():
     except Exception:
         return jsonify({"error": "Invalid dice parameters"}), 400
 
-    result = roll_dice(num_dice, num_sides)
+    dice, result = roll_dice(num_dice, num_sides)
+    if dice is None:
+        dice = [-1]
     timestamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
     entry = {
@@ -35,6 +37,7 @@ def roll_endpoint():
         "num_dice": num_dice,
         "num_sides": num_sides,
         "result": result,
+        "dice": dice
     }
 
     signature = sign_entry(entry, SECRET_KEY)

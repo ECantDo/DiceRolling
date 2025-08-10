@@ -16,21 +16,24 @@ def roll_large_dice(num_dice, sides) -> int:
     return int(random.gauss(mean, stddev))
 
 
-def roll_small_dice(num_dice, sides) -> int:
+def roll_small_dice(num_dice, sides) -> tuple[list[int], int]:
     sum = 0
+    dice: list[int] = []
     for _ in range(num_dice):
-        sum += random.randint(1, sides)
+        roll = random.randint(1, sides)
+        sum += roll
+        dice.append(roll)
 
-    return sum
+    return dice, sum
 
 
-def roll_dice(num_dice, sides) -> int:
+def roll_dice(num_dice, sides) -> tuple[list[int] | None, int]:
     if num_dice < 1:
         return -1
 
     split = 10
     if num_dice > split:
-        return roll_large_dice(num_dice, sides)
+        return None, roll_large_dice(num_dice, sides)
 
     return roll_small_dice(num_dice, sides)
 
