@@ -10,11 +10,7 @@ from dice_logic import roll_dice, sign_entry, append_log
 app = Flask(__name__)
 LOG_FILE = Path("roll_log_server.ndjson")
 
-key_b64 = os.environ.get("DICE_LOG_SECRET")
-if not key_b64:
-    raise RuntimeError("DICE_LOG_SECRET environment variable not set")
-
-SECRET_KEY = base64.urlsafe_b64decode(key_b64)
+SECRET_KEY = b"this is not a valid key"
 
 
 @app.route("/roll", methods=["POST"])
@@ -53,4 +49,12 @@ def roll_endpoint():
 def run_server():
     # context = ('cert.pem', 'key.pem')  # Use your SSL cert and key here
     # app.run(host="0.0.0.0", port=5000, ssl_context=context)
+    global SECRET_KEY
+
+    key_b64 = os.environ.get("DICE_LOG_SECRET")
+    if not key_b64:
+        raise RuntimeError("DICE_LOG_SECRET environment variable not set")
+
+    SECRET_KEY = base64.urlsafe_b64decode(key_b64)
+
     app.run(host="0.0.0.0", port=5000)
