@@ -40,3 +40,5 @@ if __name__ == "__main__":
         run_server()
     elif args.mode == arg_choice[1]:
         run_client()
+    else:
+        run_client()

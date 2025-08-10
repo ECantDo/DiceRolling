@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Removing my settings">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="More ignoring" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +25,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ECantDo/DiceRolling.git",
+    "accountId": "43a05e5e-31e7-4c64-b4ea-44fc8cd82195"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -292,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754816815171</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="More ignoring">
+      <option name="closed" value="true" />
+      <created>1754816881834</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1754816881834</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -309,6 +321,7 @@
     <MESSAGE value="Fresh logic to log the exact dice rolls" />
     <MESSAGE value="Server rolls working" />
     <MESSAGE value="Removing my settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing my settings" />
+    <MESSAGE value="More ignoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="More ignoring" />
   </component>
 </project>
