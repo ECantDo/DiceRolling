@@ -184,9 +184,9 @@ class DiceRollerUI(ctk.CTk):
                 else:
                     dice = data["dice"]
                     if dice is None:
-                        self.append_log(f"Total: {data['result']} | {num_dice}d{sides}")
+                        self.append_log(f"Total: {data['result']}")
                     else:
-                        self.append_log(f"Total: {data['result']} | {num_dice}d{sides} | Dice: {dice} ")
+                        self.append_log(f"Total: {data['result']}  Dice: {dice} ")
 
             except Exception as e:
                 self.append_log(f"Error contacting server: {e}", error=True)
