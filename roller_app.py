@@ -8,6 +8,8 @@ import argparse
 
 import server_module
 
+VERSION = "1.0.0"
+
 
 def run_server():
     # Server
@@ -32,7 +34,7 @@ if __name__ == "__main__":
     arg_choice = ["server", "client"]
 
     parser = argparse.ArgumentParser(description="Dice Roller App")
-    parser.add_argument("--mode", choices=arg_choice, required=True, help="Run as server or client")
+    parser.add_argument("--mode", choices=arg_choice, required=False, help="Run as server or client")
 
     args = parser.parse_args()
 
