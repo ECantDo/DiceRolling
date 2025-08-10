@@ -6,9 +6,10 @@ import client_module
 import dice_logic
 import argparse
 
+import script_updater
 import server_module
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 
 def run_server():
@@ -30,6 +31,8 @@ def run_client():
 
 
 if __name__ == "__main__":
+    script_updater.run_update_checker()
+
     print("Starting program...")
     arg_choice = ["server", "client"]
 
