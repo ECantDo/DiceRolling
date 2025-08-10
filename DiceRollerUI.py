@@ -1,5 +1,8 @@
 import customtkinter as ctk
 
+from dice_logic import roll_dice
+from settings_manager import SettingsManager
+
 ctk.set_appearance_mode("dark")  # "dark" or "light"
 ctk.set_default_color_theme("blue")
 
@@ -15,7 +18,9 @@ class DiceRollerUI(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.username = None
+        self.settings = SettingsManager()
+
+        self.username = self.settings.get("username", None)
         self.server_url = None
 
         self.title("Dice Roller Client UI Prototype :3")
@@ -101,6 +106,8 @@ class DiceRollerUI(ctk.CTk):
         self.log_text = ctk.CTkTextbox(self, width=460, height=350, font=used_font)
         self.log_text.pack(padx=20, pady=(0, 20), fill="both", expand=True)
         self.log_text.configure(state="disabled")  # Readonly for now
+
+        self.after(200, self.startup_dialogs)
         pass
 
     def show_options_menu(self):
@@ -116,25 +123,61 @@ class DiceRollerUI(ctk.CTk):
 
     def open_url_dialog(self):
         self.menu_frame.place_forget()
-        dialog = InputDialog(self, "url")
+        dialog = InputDialog(self, "url", self.server_url)
         self.wait_window(dialog)
         if dialog.new_value:
             self.server_url = dialog.new_value
-            print(self.server_url)
 
     def open_name_dialog(self):
         self.menu_frame.place_forget()
-        dialog = InputDialog(self, "name")
+        dialog = InputDialog(self, "name", self.username)
         self.wait_window(dialog)
         if dialog.new_value:
             self.username = dialog.new_value
-            print(self.username)
+            if self.username:
+                self.settings.set("username", self.username)
+
+    def startup_dialogs(self):
+        # Open URL dialog first
+        self.open_url_dialog()
+        # After URL dialog closes, check username
+        if not self.username:
+            self.open_name_dialog()
+
+    def perform_roll(self):
+        try:
+            num_dice = int(self.entry_num_dice.get())
+            sides = int(self.entry_sides.get())
+        except ValueError:
+            self.append_log("Please enter valid numbers for dice and sides.")
+            return
+
+        if not self.server_url:
+            # Local roll
+            dice, total = roll_dice(num_dice, sides)
+            self.append_log(f"Local roll: Dice: {dice} Total: {total}")
+        else:
+            # TODO: Call server roll function here
+            self.append_log(f"Rolling on server at {self.server_url} (not implemented yet)")
+        pass
+
+    def append_log(self, text):
+        self.log_text.configure(state="normal")
+        self.log_text.insert("end", text + "\n")
+        self.log_text.see("end")
+        self.log_text.configure(state="disabled")
+        pass
+
+    pass
 
 
 class InputDialog(ctk.CTkToplevel):
-    def __init__(self, parent, selection: str):
+    def __init__(self, parent, selection: str, current_value: str | None):
         super().__init__(parent)
         self.new_value = None
+
+        if current_value is None:
+            current_value = ""
 
         self.update_idletasks()  # ensure widget sizes are calculated
         # Position relative to parent window
@@ -157,9 +200,9 @@ class InputDialog(ctk.CTkToplevel):
         self.resizable(False, False)
         self.grab_set()  # make modal
 
-        # ctk.CTkLabel(self, text="Enter Server URL:", font=fonts[2]).pack(pady=(10, 5))
         self.entry = ctk.CTkEntry(self, font=fonts[2])
         self.entry.pack(padx=20, fill="x")
+        self.entry.insert(0, current_value)
         self.entry.focus()
 
         ctk.CTkButton(self, text="OK", command=self.on_ok, font=fonts[2]).pack(pady=15)
