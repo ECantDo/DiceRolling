@@ -9,6 +9,7 @@ import argparse
 import script_updater
 import server_module
 
+
 def run_server():
     # Server
     server_module.run_server()

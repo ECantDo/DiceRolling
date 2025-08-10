@@ -3,3 +3,4 @@
 /settings.json
 /*.ndjson
 /*.spec
+/generate_key.py

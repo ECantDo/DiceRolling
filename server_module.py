@@ -1,4 +1,5 @@
 # file: server_module.py
+import base64
 
 from flask import Flask, request, jsonify
 import os
@@ -8,7 +9,12 @@ from dice_logic import roll_dice, sign_entry, append_log
 
 app = Flask(__name__)
 LOG_FILE = Path("roll_log_server.ndjson")
-SECRET_KEY = os.environ.get("DICE_LOG_SECRET", "replace_me_with_secure_key").encode()
+
+key_b64 = os.environ.get("DICE_LOG_SECRET")
+if not key_b64:
+    raise RuntimeError("DICE_LOG_SECRET environment variable not set")
+
+SECRET_KEY = base64.urlsafe_b64decode(key_b64)
 
 
 @app.route("/roll", methods=["POST"])
