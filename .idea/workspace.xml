@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="More ignoring">
-      <change afterPath="$PROJECT_DIR$/script_updater.py" afterDir="false" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Forgot to update version number">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/roller_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,8 +145,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Batch.start_client (1)" />
       <item itemvalue="Batch.start_client" />
+      <item itemvalue="Batch.start_client (1)" />
       <item itemvalue="Batch.start_server (1)" />
       <item itemvalue="Batch.start_server" />
       <item itemvalue="Python.roller_app - client" />
@@ -308,7 +306,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754816881834</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Should do updates?">
+      <option name="closed" value="true" />
+      <created>1754818532325</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1754818532325</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Forgot to update version number">
+      <option name="closed" value="true" />
+      <created>1754818613222</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1754818613222</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -349,6 +363,8 @@
     <MESSAGE value="Server rolls working" />
     <MESSAGE value="Removing my settings" />
     <MESSAGE value="More ignoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="More ignoring" />
+    <MESSAGE value="Should do updates?" />
+    <MESSAGE value="Forgot to update version number" />
+    <option name="LAST_COMMIT_MESSAGE" value="Forgot to update version number" />
   </component>
 </project>
