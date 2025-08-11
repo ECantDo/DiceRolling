@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Forgot to update version number">
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Changed directory where the settings will be">
+      <change afterPath="$PROJECT_DIR$/src/ServerLogGUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/roller_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +86,7 @@
       <recent name="E:\PycharmProjects\DiceRoller\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.LoggerUI">
+  <component name="RunManager" selected="Batch.start_client">
     <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -188,11 +191,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Batch.start_client" />
+        <item itemvalue="Batch.start_server" />
         <item itemvalue="Python.LoggerUI" />
         <item itemvalue="Python.generate_key" />
-        <item itemvalue="Batch.start_server" />
         <item itemvalue="Batch.start_server (1)" />
-        <item itemvalue="Batch.start_client" />
       </list>
     </recent_temporary>
   </component>
@@ -468,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754877768942</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Changed directory where the settings will be">
+      <option name="closed" value="true" />
+      <created>1754883198114</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1754883198114</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -517,6 +528,7 @@
     <MESSAGE value="Fixing when to check for the secret key" />
     <MESSAGE value="Reorganizing files" />
     <MESSAGE value="Forgot to update version number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forgot to update version number" />
+    <MESSAGE value="Changed directory where the settings will be" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed directory where the settings will be" />
   </component>
 </project>
