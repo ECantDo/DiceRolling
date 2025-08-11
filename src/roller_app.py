@@ -1,10 +1,7 @@
 # file: roller_app.py
 
-from UI import DiceRollerUI
-from helper import script_updater
+import script_updater, server_module, DiceRollerUI
 import argparse
-
-from src.server_functions import server_module
 
 
 def run_server():
