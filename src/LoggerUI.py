@@ -1,4 +1,5 @@
 import customtkinter as ctk
+from functools import partial
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
@@ -9,6 +10,7 @@ fonts = [("Arial", 16), ("Helvetica", 18, "bold"), ("Helvetica", 16, "bold")]
 class LogTable(ctk.CTkFrame):
     def __init__(self, master, columns: list[str] = None, **kwargs):
         super().__init__(master, **kwargs)
+        self.on_row_click = self.on_row_click
 
         if columns is not None:
             self.columns = columns
@@ -16,12 +18,19 @@ class LogTable(ctk.CTkFrame):
             self.columns = ["Name", "Result", "Rolls"]
 
         self.rows = []
-        self.notes_row = None
+        self.selected_row_index = None
 
+        # Scrolling
         self.scrollable_frame = ctk.CTkScrollableFrame(self, corner_radius=1)
         self.scrollable_frame.grid(row=0, column=0, sticky="nswe")
-        # self.scrollable_frame.pack()
-        self.grid_columnconfigure(0, weight=1)
+
+        # NOTES
+        self.notes_panel = ctk.CTkTextbox(self, state="disabled", wrap="word", font=fonts[2], width=250)
+        self.notes_panel.grid(row=0, column=1, sticky="nswe")
+
+        # Configure grid to split space between log and notes
+        self.grid_columnconfigure(0, weight=3)
+        self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(0, weight=1)
 
         # Headers
@@ -48,7 +57,7 @@ class LogTable(ctk.CTkFrame):
 
         """
         # Shift existing rows down
-        for r, (frame, labels) in enumerate(self.rows, start=1):
+        for r, (frame, labels, note) in enumerate(self.rows, start=1):
             frame.grid_configure(row=r + 1)
 
         color = get_color_for_roll(*row_data[1:])
@@ -85,16 +94,55 @@ class LogTable(ctk.CTkFrame):
         for i in range(len(self.columns)):
             row_frame.grid_columnconfigure(i, weight=1, uniform="col")
 
-        def on_click(event, idx=len(self.rows), note=notes):
-            self.toggle_notes(idx, note)
+        def on_click(event, row_index=len(self.rows)):
+
+            row_index = len(self.rows) - row_index - 1
+            # Remove outline from previously selected row
+            if self.selected_row_index is not None and self.selected_row_index < len(self.rows):
+                old_frame, _, _ = self.rows[self.selected_row_index]
+                old_frame.configure(border_width=0)
+
+            # Add outline to newly selected row
+            frame, _, _ = self.rows[row_index]
+            frame.configure(border_width=2, border_color="#3498db")  # blue outline
+
+            self.selected_row_index = row_index
+
+            # Update notes panel
+            notes = self.rows[row_index][2]
+
+            if notes:
+                self.notes_panel.configure(state="normal")
+                self.notes_panel.delete("1.0", "end")
+                self.notes_panel.insert("1.0", notes)
+                self.notes_panel.configure(state="disabled")
+            else:
+                self.notes_panel.configure(state="normal")
+                self.notes_panel.delete("1.0", "end")
+                self.notes_panel.configure(state="disabled")
+
+            if self.on_row_click:
+                self.on_row_click(row_index)
 
         row_frame.bind("<Button-1>", on_click)
-        for lbl in labels:
-            lbl.bind("<Button-1>", on_click)
+        for label in labels:
+            label.bind("<Button-1>", on_click)
 
         # Insert it :)
-        self.rows.insert(0, (row_frame, labels))
+        self.rows.insert(0, (row_frame, labels, notes))
         pass
+
+    def on_row_click(self, row_index):
+        _, _, note_text = self.rows[row_index]
+        if note_text:
+            self.notes_panel.configure(state="normal")
+            self.notes_panel.delete("1.0", "end")
+            self.notes_panel.insert("1.0", note_text)
+            self.notes_panel.configure(state="disabled")
+        else:
+            self.notes_panel.configure(state="normal")
+            self.notes_panel.delete("1.0", "end")
+            self.notes_panel.configure(state="disabled")
 
     def clear(self):
         """
@@ -106,38 +154,11 @@ class LogTable(ctk.CTkFrame):
         self.rows.clear()
         pass
 
-    def toggle_notes(self, row_index, note):
-        # Remove any existing notes panel first
-        if self.notes_row is not None:
-            self.notes_row.destroy()
-            self.notes_row = None
-            # Reset grid rows of rows below notes
-            self._refresh_row_positions()
-
-            # If clicked same row again, just close and return
-            if self.notes_row == row_index:
-                return
-
-        if not note:
-            return  # No notes to show
-
-            # Insert a new frame just below the clicked row for the notes
-        note_frame = ctk.CTkFrame(self.scrollable_frame, fg_color="#2c3e50", corner_radius=4)
-        note_label = ctk.CTkLabel(note_frame, text=note, wraplength=500, justify="left")
-        note_label.pack(padx=10, pady=5)
-
-        # Insert in grid below clicked row (row_index + 1)
-        note_frame.grid(row=row_index + 1, column=0, columnspan=len(self.columns), sticky="ew", padx=20, pady=(0, 10))
-        self.notes_row = note_frame
-
-        # Push rows below notes down by 1
-        self._refresh_row_positions(skip=row_index + 1)
-
     def _refresh_row_positions(self, skip=None):
-        # Re-grid all rows to keep correct row order, adjusting for inserted notes row
+        # Re-grid all rows accounting for notes row at 'skip' grid row
         row_num = 1
-        for idx, (frame, labels) in enumerate(self.rows):
-            if skip is not None and row_num == skip:
+        for (frame, labels, note) in self.rows:
+            if skip is not None and row_num >= skip:
                 row_num += 1  # leave a gap for notes row
             frame.grid_configure(row=row_num)
             for label in labels:
@@ -179,17 +200,17 @@ def get_color_for_roll(total: int | str, num_dice: int | str, num_sides: int | s
 if __name__ == "__main__":
     root = ctk.CTk()
     root.title("Dice Roll Log")
-    root.geometry("600x400")
+    root.geometry("800x500")
 
     log_columns = ["Name", "Result", "Rolls"]
     log_table = LogTable(root, columns=log_columns)
     log_table.pack(fill="both", expand=True, padx=10, pady=10)
 
     for _ in range(1):
-        log_table.add_row(("Alice", 18, 1, 20))
-        log_table.add_row(("Bob", 7, 2, 6))
-        log_table.add_row(("Charlie", 12, 2, 8))
-        log_table.add_row(("ECan", 20, 1, 20))
+        log_table.add_row(("Alice", 18, 1, 20), notes="Hello")
+        log_table.add_row(("Bob", 7, 2, 6), "TESTING")
+        log_table.add_row(("Charlie", 12, 2, 8), "AHEHIA")
+        log_table.add_row(("ECan", 20, 1, 20), "EEEEE")
 
     root.mainloop()
     pass

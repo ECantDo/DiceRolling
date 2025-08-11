@@ -9,7 +9,7 @@ from pathlib import Path
 from dice_logic import roll_dice, sign_entry, append_log
 
 app = Flask(__name__)
-LOG_FILE = Path("../roll_log_server.ndjson")
+LOG_FILE = Path("./roll_log_server.ndjson")
 
 log_queue: queue.Queue | None = None
 
@@ -21,7 +21,7 @@ def log_event(msg):
         print("Queue not initialized...")
         return
 
-    print(msg)
+    # print(msg)
     if log_queue:
         log_queue.put(msg)
 
