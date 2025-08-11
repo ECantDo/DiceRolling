@@ -1,5 +1,6 @@
 # file: server_module.py
 import base64
+import queue
 
 from flask import Flask, request, jsonify
 import os
@@ -8,9 +9,21 @@ from pathlib import Path
 from dice_logic import roll_dice, sign_entry, append_log
 
 app = Flask(__name__)
-LOG_FILE = Path("../roll_log_server.ndjson")
+LOG_FILE = Path("./roll_log_server.ndjson")
+
+log_queue: queue.Queue | None = None
 
 SECRET_KEY = b"this is not a valid key"
+
+
+def log_event(msg):
+    if log_queue is None:
+        print("Queue not initialized...")
+        return
+
+    # print(msg)
+    if log_queue:
+        log_queue.put(msg)
 
 
 @app.route("/roll", methods=["POST"])
@@ -24,7 +37,7 @@ def roll_endpoint():
         num_sides = int(data.get("num_sides"))
         if num_dice < 1 or num_sides < 2:
             raise ValueError
-    except Exception:
+    except ValueError:
         return jsonify({"error": "Invalid dice parameters"}), 400
 
     dice, result = roll_dice(num_dice, num_sides)
@@ -37,20 +50,22 @@ def roll_endpoint():
         "num_sides": num_sides,
         "result": result,
         "dice": dice,
-        "faces": num_sides
+        "version": data["version"]
     }
 
     signature = sign_entry(entry, SECRET_KEY)
     entry["signature"] = signature
 
     append_log(entry, LOG_FILE)
+    log_event([(player, result, num_dice, num_sides), dice])
     return jsonify(entry)
 
 
-def run_server():
+def run_server(log_q):
     # context = ('cert.pem', 'key.pem')  # Use your SSL cert and key here
     # app.run(host="0.0.0.0", port=5000, ssl_context=context)
-    global SECRET_KEY
+    global SECRET_KEY, log_queue
+    log_queue = log_q
 
     key_b64 = os.environ.get("DICE_LOG_SECRET")
     if not key_b64:

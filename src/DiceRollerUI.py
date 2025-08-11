@@ -3,6 +3,7 @@ import requests
 
 from dice_logic import roll_dice
 from settings_manager import SettingsManager
+from script_updater import CURRENT_VERSION
 
 ctk.set_appearance_mode("dark")  # "dark" or "light"
 ctk.set_default_color_theme("blue")
@@ -154,11 +155,6 @@ class DiceRollerUI(ctk.CTk):
         try:
             num_dice = int(self.entry_num_dice.get())
             sides = int(self.entry_sides.get())
-
-            if num_dice > 100_000:
-                raise ValueError
-            if sides > 200:
-                raise ValueError
         except ValueError:
             self.append_log("Please enter valid numbers for dice and sides.", error=True)
             return
@@ -174,7 +170,8 @@ class DiceRollerUI(ctk.CTk):
             payload = {
                 "player": self.username,
                 "num_dice": num_dice,
-                "num_sides": sides
+                "num_sides": sides,
+                "version": CURRENT_VERSION
             }
             try:
                 # Timeout is in seconds
@@ -258,13 +255,10 @@ class InputDialog(ctk.CTkToplevel):
         self.entry.insert(0, current_value)
         self.entry.focus()
 
-        ctk.CTkButton(self, text="OK", command=lambda: self.on_ok(selection != "url"), font=fonts[2]).pack(pady=15)
+        ctk.CTkButton(self, text="OK", command=self.on_ok, font=fonts[2]).pack(pady=15)
 
-    def on_ok(self, limit: bool):
-        if limit:
-            self.new_value = self.entry.get()[:20]
-        else:
-            self.new_value = self.entry.get()
+    def on_ok(self):
+        self.new_value = self.entry.get()
         self.destroy()
 
 

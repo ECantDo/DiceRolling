@@ -4,9 +4,7 @@ import random
 import hmac
 import hashlib
 import json
-import time
 from pathlib import Path
-from typing import Optional
 
 
 def roll_large_dice(num_dice, sides) -> int:

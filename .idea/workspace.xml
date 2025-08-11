@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Reorganizing files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceRollerUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/LoggerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoggerUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/dice_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice_logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/script_updater.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/settings_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/universal_fonts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/universal_fonts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/roller_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_functions/client_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_functions/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Version number">
+      <change beforePath="$PROJECT_DIR$/src/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceRollerUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/script_updater.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,22 +56,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Batch.start_client (1).executor&quot;: &quot;Run&quot;,
-    &quot;Batch.start_client.executor&quot;: &quot;Run&quot;,
-    &quot;Batch.start_server (1).executor&quot;: &quot;Run&quot;,
-    &quot;Batch.start_server.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LoggerUI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_key.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.roller_app - client.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;server__ui&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/PycharmProjects/DiceRoller/dist&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Batch.start_client (1).executor": "Run",
+    "Batch.start_client.executor": "Run",
+    "Batch.start_server (1).executor": "Run",
+    "Batch.start_server.executor": "Run",
+    "Python.LoggerUI.executor": "Run",
+    "Python.generate_key.executor": "Run",
+    "Python.gui.executor": "Run",
+    "Python.roller_app - client.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "server__ui",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/PycharmProjects/DiceRoller/dist"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\PycharmProjects\DiceRoller\dist" />
@@ -92,7 +85,7 @@
       <recent name="E:\PycharmProjects\DiceRoller\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Batch.start_client">
+  <component name="RunManager" selected="Batch.start_server">
     <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -197,11 +190,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Batch.start_server" />
         <item itemvalue="Batch.start_client" />
         <item itemvalue="Python.LoggerUI" />
-        <item itemvalue="Batch.start_server (1)" />
-        <item itemvalue="Batch.start_server" />
         <item itemvalue="Python.generate_key" />
+        <item itemvalue="Batch.start_server (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -469,7 +462,71 @@
       <option name="project" value="LOCAL" />
       <updated>1754861680619</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Forgot to update version number">
+      <option name="closed" value="true" />
+      <created>1754877768942</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1754877768942</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Changed directory where the settings will be">
+      <option name="closed" value="true" />
+      <created>1754883198114</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1754883198114</updated>
+    </task>
+    <task id="LOCAL-00034" summary="GUI for logging on server side">
+      <option name="closed" value="true" />
+      <created>1754884479809</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1754884479809</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Updated version number">
+      <option name="closed" value="true" />
+      <created>1754884543578</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1754884543578</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Basic clicking on log entry to see the dice rolled">
+      <option name="closed" value="true" />
+      <created>1754886094426</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1754886094426</updated>
+    </task>
+    <task id="LOCAL-00037" summary="In-place menu to show notes&#10;&#10;Currently, in the wrong position, but it's just reversed">
+      <option name="closed" value="true" />
+      <created>1754886523701</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1754886523701</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Had issues gave up&#10;&#10;Did something really different...">
+      <option name="closed" value="true" />
+      <created>1754892762143</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1754892762143</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Version number">
+      <option name="closed" value="true" />
+      <created>1754892812204</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1754892812204</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -496,10 +553,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Copying files from original project to make better" />
-    <MESSAGE value="File structuring" />
-    <MESSAGE value="Moved main to the app file" />
-    <MESSAGE value="New rolling functions.&#10;&#10;One master dice roll function, to separate 2 dice rollers, one for a very large number of dice, one for a smaller amount." />
     <MESSAGE value="Signing logs in dice logic" />
     <MESSAGE value="AHHHH" />
     <MESSAGE value="Initial UI" />
@@ -511,13 +564,20 @@
     <MESSAGE value="Removing my settings" />
     <MESSAGE value="More ignoring" />
     <MESSAGE value="Should do updates?" />
-    <MESSAGE value="Forgot to update version number" />
     <MESSAGE value="Changed version number to test updating" />
     <MESSAGE value="Updated to use a now secret key for secure logging :)" />
     <MESSAGE value="Forgot to store dice side counts" />
     <MESSAGE value="Forgot to display dice side counts" />
     <MESSAGE value="Fixing when to check for the secret key" />
     <MESSAGE value="Reorganizing files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reorganizing files" />
+    <MESSAGE value="Forgot to update version number" />
+    <MESSAGE value="Changed directory where the settings will be" />
+    <MESSAGE value="GUI for logging on server side" />
+    <MESSAGE value="Updated version number" />
+    <MESSAGE value="Basic clicking on log entry to see the dice rolled" />
+    <MESSAGE value="In-place menu to show notes&#10;&#10;Currently, in the wrong position, but it's just reversed" />
+    <MESSAGE value="Had issues gave up&#10;&#10;Did something really different..." />
+    <MESSAGE value="Version number" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version number" />
   </component>
 </project>

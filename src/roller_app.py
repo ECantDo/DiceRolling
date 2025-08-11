@@ -1,15 +1,22 @@
 # file: roller_app.py
+import threading
 
+import script_updater, server_module, DiceRollerUI
 import argparse
+import queue
 
-import DiceRollerUI
-import script_updater
-import server_module
+from ServerLogGUI import ServerLogGUI
 
 
 def run_server():
     # Server
-    server_module.run_server()
+    log_q = queue.Queue()
+    gui = ServerLogGUI(log_q)
+
+    server_thread = threading.Thread(target=server_module.run_server, args=(log_q,), daemon=True)
+    server_thread.start()
+
+    gui.gui_main()
     pass
 
 
