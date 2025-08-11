@@ -1,7 +1,7 @@
 # file: roller_app.py
 import threading
 
-import script_updater, server_module, DiceRollerUI
+import script_updater, server_module, DiceRollerUI, asset_file_validation
 import argparse
 import queue
 
@@ -55,6 +55,9 @@ def resource_path(relative_path: str) -> str:
 
 if __name__ == "__main__":
     script_updater.run_update_checker()
+
+    assets_folder = resource_path("assets")
+    asset_file_validation.check_and_download_assets(assets_folder)
 
     print("Starting program...")
     arg_choice = ["server", "client"]
