@@ -20,6 +20,8 @@ class SingleDiceRollerFrame(ctk.CTkFrame):
         else:
             self.dice_faces = dice_faces
 
+        self._transparent_dice = ImageTk.PhotoImage(Image.open("assets/diceTransparent.png"))
+
         self.label = ctk.CTkLabel(self, image=self.dice_faces[0], text="")
         self.label.pack(padx=10, pady=10)
 
@@ -70,6 +72,15 @@ class SingleDiceRollerFrame(ctk.CTkFrame):
 
         self.elapsed += self.roll_interval
         self.current_after_id = self.after(self.roll_interval, lambda: self._roll_animation(result))
+        pass
+
+    def hide(self):
+        self.label.configure(image=self._transparent_dice)
+        pass
+
+    def show(self):
+        self.label.configure(image=self.dice_faces[self.previous_roll_face])
+        pass
 
 
 # For later use when adding more dice
@@ -82,6 +93,8 @@ class DiceApp(ctk.CTkFrame):
         self.max_dice = max_dice
         self.container_width = 700
         self.container_height = 300
+        self.dice_count = 1
+        self.rolling = False
 
         # Load all images
         self.dice_frames = [ImageTk.PhotoImage(Image.open(path).resize((128, 128))) for path in
@@ -93,34 +106,35 @@ class DiceApp(ctk.CTkFrame):
         self.dice_container.pack(pady=10)
         self.dice_container.pack_propagate(False)  # Fix size, don’t shrink to contents
 
+        # Configure grid columns (5 columns)
+        for i in range(5):
+            self.dice_container.grid_columnconfigure(i, weight=1)
+
+        # 2 rows max
+        for r in range(2):
+            self.dice_container.grid_rowconfigure(r, weight=1)
+
         self.dice_widgets: list[SingleDiceRollerFrame] = []
-        # Init empty
-        self.create_dice_widgets(0)
-        pass
-
-    def create_dice_widgets(self, count: int):
-        # Clamp the range
-        count: int = max(0, min(count, self.max_dice))
-
-        if count == len(self.dice_widgets):
-            return  # Already have the correct number; don't need to remake
-
-        # Clear old dice
-        for die in self.dice_widgets:
-            die.destroy()
-        self.dice_widgets.clear()
-
-        # Create new dice
-        for _ in range(count):
+        for idx in range(self.max_dice):
             die = SingleDiceRollerFrame(self.dice_container, self.dice_frames)
-            die.pack(side="left", padx=5)
             self.dice_widgets.append(die)
 
+            row, col = _compute_dice_location(idx, self.max_dice)
+            die.grid(row=row, column=col, padx=5, pady=5, sticky="nsew")
+
+        self.set_dice_count(0)
         pass
 
     def set_dice_count(self, count: int):
-        self.create_dice_widgets(count)
-        pass
+        if self.rolling:
+            return
+        count = max(0, min(count, self.max_dice))
+        self.dice_count = count
+        for i, die in enumerate(self.dice_widgets):
+            if i < count:
+                pass
+            else:
+                die.hide()  # hide dice
 
     def roll_dice(self, results: list[int] | None):
         """
@@ -129,16 +143,49 @@ class DiceApp(ctk.CTkFrame):
         rolled with the expected outcomes
         :return:
         """
-        if results is None:
-            results = [None] * len(self.dice_widgets)
-        elif len(results) != len(self.dice_widgets):
+        if self.rolling:
             return
+        self.rolling = True
+        if results is None:
+            results = [None] * self.dice_count
+        else:
+            self.set_dice_count(len(results))
 
         for i, die in enumerate(self.dice_widgets):
+            if i >= len(results):
+                break
             die.roll(results[i])
+        self.rolling = False
         pass
 
     pass
+
+
+def _compute_dice_location(idx: int, count: int) -> tuple[int, int]:
+    row = 0 if count <= 5 else (0 if idx < 5 else 1)
+    if count == 1:
+        col = 2  # center single die in middle column (0-based)
+    elif count == 2:
+        # Spread 2 dice in columns 1 and 3 (centered)
+        col = 1 if idx == 0 else 3
+    elif count == 3:
+        # Spread 3 dice in columns 1,2,3
+        col = 1 + idx
+    elif count == 4:
+        # 2x2 grid: first two dice top row, next two bottom row columns 1 and 3
+        if idx < 2:
+            row = 0
+            col = 1 + idx * 2  # 1,3
+        else:
+            row = 1
+            col = 1 + (idx - 2) * 2  # 1,3
+    else:
+        # For 5 to 10 dice:
+        # top row: dice 0-4 columns 0-4
+        # bottom row: dice 5-9 columns 0-4
+        col = idx % 5
+        row = 0 if idx < 5 else 1
+    return row, col
 
 
 if __name__ == "__main__":
@@ -154,7 +201,7 @@ if __name__ == "__main__":
 
     # Example: roll 5 dice with random results
     def roll_random():
-        dice_app.set_dice_count(5)
+        dice_app.set_dice_count(random.randint(1, 10))
         dice_app.roll_dice(None)
 
 
@@ -164,7 +211,7 @@ if __name__ == "__main__":
         dice_app.roll_dice([3, 5, 2])
 
 
-    roll_button = ctk.CTkButton(root, text="Roll 5 Random Dice", command=roll_random)
+    roll_button = ctk.CTkButton(root, text="Roll Random Dice", command=roll_random)
     roll_button.pack(pady=10)
 
     roll_fixed_button = ctk.CTkButton(root, text="Roll 3 Fixed Dice", command=roll_fixed)
