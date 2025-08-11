@@ -1,7 +1,7 @@
 import json
 import os
 
-SETTINGS_FILE = "../../settings.json"
+SETTINGS_FILE = "../settings.json"
 
 
 class SettingsManager:

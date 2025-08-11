@@ -1,2 +1,2 @@
 cd ../
-python src/roller_app.py --mode client
+python -m src.roller_app --mode client
