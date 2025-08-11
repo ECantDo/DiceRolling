@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Version number">
-      <change afterPath="$PROJECT_DIR$/src/diceRolling.py" afterDir="false" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Really basic dice roller animation UI, with some assets&#10;&#10;The assets are really basic, but hopefully are done in such a way that the users can customize them as they wish">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/diceRolling.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/diceRolling.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +78,11 @@
       <recent name="E:\PycharmProjects\DiceRoller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\PycharmProjects\DiceRoller\src\assets\d6" />
       <recent name="E:\PycharmProjects\DiceRoller\src" />
       <recent name="E:\PycharmProjects\DiceRoller\src\server_functions" />
       <recent name="E:\PycharmProjects\DiceRoller\src\helper" />
       <recent name="E:\PycharmProjects\DiceRoller\helper" />
-      <recent name="E:\PycharmProjects\DiceRoller\UI" />
     </key>
   </component>
   <component name="RunManager" selected="Python.diceRolling">
@@ -539,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754892812204</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Really basic dice roller animation UI, with some assets&#10;&#10;The assets are really basic, but hopefully are done in such a way that the users can customize them as they wish">
+      <option name="closed" value="true" />
+      <created>1754944461684</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1754944461684</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -566,7 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Signing logs in dice logic" />
     <MESSAGE value="AHHHH" />
     <MESSAGE value="Initial UI" />
     <MESSAGE value="UI looking good" />
@@ -591,6 +598,7 @@
     <MESSAGE value="In-place menu to show notes&#10;&#10;Currently, in the wrong position, but it's just reversed" />
     <MESSAGE value="Had issues gave up&#10;&#10;Did something really different..." />
     <MESSAGE value="Version number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version number" />
+    <MESSAGE value="Really basic dice roller animation UI, with some assets&#10;&#10;The assets are really basic, but hopefully are done in such a way that the users can customize them as they wish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Really basic dice roller animation UI, with some assets&#10;&#10;The assets are really basic, but hopefully are done in such a way that the users can customize them as they wish" />
   </component>
 </project>
