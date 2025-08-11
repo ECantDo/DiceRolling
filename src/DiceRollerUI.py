@@ -3,6 +3,7 @@ import requests
 
 from dice_logic import roll_dice
 from settings_manager import SettingsManager
+from script_updater import CURRENT_VERSION
 
 ctk.set_appearance_mode("dark")  # "dark" or "light"
 ctk.set_default_color_theme("blue")
@@ -169,7 +170,8 @@ class DiceRollerUI(ctk.CTk):
             payload = {
                 "player": self.username,
                 "num_dice": num_dice,
-                "num_sides": sides
+                "num_sides": sides,
+                "version": CURRENT_VERSION
             }
             try:
                 # Timeout is in seconds
@@ -184,9 +186,9 @@ class DiceRollerUI(ctk.CTk):
                 else:
                     dice = data["dice"]
                     if dice is None:
-                        self.append_log(f"Total: {data['result']}")
+                        self.append_log(f"Total: {data['result']} | {num_dice}d{sides}")
                     else:
-                        self.append_log(f"Total: {data['result']}  Dice: {dice} ")
+                        self.append_log(f"Total: {data['result']} | {num_dice}d{sides} | Dice: {dice} ")
 
             except Exception as e:
                 self.append_log(f"Error contacting server: {e}", error=True)

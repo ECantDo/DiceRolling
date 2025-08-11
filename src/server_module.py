@@ -49,7 +49,8 @@ def roll_endpoint():
         "num_dice": num_dice,
         "num_sides": num_sides,
         "result": result,
-        "dice": dice
+        "dice": dice,
+        "version": data["version"]
     }
 
     signature = sign_entry(entry, SECRET_KEY)

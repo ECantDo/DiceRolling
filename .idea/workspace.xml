@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="In-place menu to show notes&#10;&#10;Currently, in the wrong position, but it's just reversed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoggerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoggerUI.py" afterDir="false" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Version number">
+      <change beforePath="$PROJECT_DIR$/src/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceRollerUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/script_updater.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +85,7 @@
       <recent name="E:\PycharmProjects\DiceRoller\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Batch.start_client">
+  <component name="RunManager" selected="Batch.start_server">
     <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,8 +190,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Batch.start_client" />
         <item itemvalue="Batch.start_server" />
+        <item itemvalue="Batch.start_client" />
         <item itemvalue="Python.LoggerUI" />
         <item itemvalue="Python.generate_key" />
         <item itemvalue="Batch.start_server (1)" />
@@ -510,7 +510,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754886523701</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Had issues gave up&#10;&#10;Did something really different...">
+      <option name="closed" value="true" />
+      <created>1754892762143</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1754892762143</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Version number">
+      <option name="closed" value="true" />
+      <created>1754892812204</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1754892812204</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -537,8 +553,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Moved main to the app file" />
-    <MESSAGE value="New rolling functions.&#10;&#10;One master dice roll function, to separate 2 dice rollers, one for a very large number of dice, one for a smaller amount." />
     <MESSAGE value="Signing logs in dice logic" />
     <MESSAGE value="AHHHH" />
     <MESSAGE value="Initial UI" />
@@ -562,6 +576,8 @@
     <MESSAGE value="Updated version number" />
     <MESSAGE value="Basic clicking on log entry to see the dice rolled" />
     <MESSAGE value="In-place menu to show notes&#10;&#10;Currently, in the wrong position, but it's just reversed" />
-    <option name="LAST_COMMIT_MESSAGE" value="In-place menu to show notes&#10;&#10;Currently, in the wrong position, but it's just reversed" />
+    <MESSAGE value="Had issues gave up&#10;&#10;Did something really different..." />
+    <MESSAGE value="Version number" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version number" />
   </component>
 </project>
