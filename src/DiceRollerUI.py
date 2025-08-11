@@ -167,6 +167,8 @@ class DiceRollerUI(ctk.CTk):
                 self.dice_app.set_dice_count(len(dice))
                 self.dice_app.roll_dice(dice)
                 pass
+            else:
+                self.dice_app.set_dice_count(0)
 
         try:
             num_dice = int(self.entry_num_dice.get())
@@ -179,7 +181,6 @@ class DiceRollerUI(ctk.CTk):
             # Local roll
             dice, total = roll_dice(num_dice, sides)
             if dice is None:
-                self.dice_app.set_dice_count(0)
                 self.append_log(f"Local roll: Total: {total} | {num_dice}d{sides}")
             else:
                 v_roll()

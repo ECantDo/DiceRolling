@@ -35,12 +35,20 @@ def run_client():
     pass
 
 
-def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
+def resource_path(relative_path: str) -> str:
+    """
+    Get absolute path to resource located alongside the executable/script.
+
+    Works both in dev (script) and after packaging as an EXE.
+
+    :param relative_path: relative path to resource from the EXE/script folder
+    :return: absolute path to resource
+    """
+    if getattr(sys, 'frozen', False):
+        # Running as compiled exe
+        base_path = os.path.dirname(sys.executable)
+    else:
+        # Running as script
         base_path = os.path.abspath(os.path.dirname(__file__))
     return os.path.join(base_path, relative_path)
 
