@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Roll up to 10d6&#10;&#10;No support for other dice like the d20">
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Gridded rolling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceRollerUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoggerUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/diceRolling.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/diceRolling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/roller_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +88,7 @@
       <recent name="E:\PycharmProjects\DiceRoller\helper" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.diceRolling">
+  <component name="RunManager" selected="Batch.start_server">
     <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -203,9 +206,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.diceRolling" />
         <item itemvalue="Batch.start_server" />
         <item itemvalue="Batch.start_client" />
+        <item itemvalue="Python.diceRolling" />
         <item itemvalue="Python.LoggerUI" />
         <item itemvalue="Python.generate_key" />
       </list>
@@ -555,7 +558,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754946534018</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Gridded rolling">
+      <option name="closed" value="true" />
+      <created>1754947948181</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1754947948181</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +593,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial UI" />
     <MESSAGE value="UI looking good" />
     <MESSAGE value="More functionality!" />
     <MESSAGE value="Local dice rolling working" />
@@ -607,6 +617,7 @@
     <MESSAGE value="Version number" />
     <MESSAGE value="Really basic dice roller animation UI, with some assets&#10;&#10;The assets are really basic, but hopefully are done in such a way that the users can customize them as they wish" />
     <MESSAGE value="Roll up to 10d6&#10;&#10;No support for other dice like the d20" />
-    <option name="LAST_COMMIT_MESSAGE" value="Roll up to 10d6&#10;&#10;No support for other dice like the d20" />
+    <MESSAGE value="Gridded rolling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gridded rolling" />
   </component>
 </project>

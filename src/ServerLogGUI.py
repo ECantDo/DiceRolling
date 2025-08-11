@@ -13,7 +13,7 @@ class ServerLogGUI:
 
         root = ctk.CTk()
         root.title("Dice Roller Server")
-        root.geometry("600x400")
+        root.geometry("1000x400")
 
         log_columns = ["Name", "Result", "Rolls"]
         log_table = LogTable(root, columns=log_columns)

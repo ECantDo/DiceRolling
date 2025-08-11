@@ -21,7 +21,7 @@ class LogTable(ctk.CTkFrame):
         self.selected_row_index = None
 
         # Scrolling
-        self.scrollable_frame = ctk.CTkScrollableFrame(self, corner_radius=1)
+        self.scrollable_frame = ctk.CTkScrollableFrame(self, corner_radius=1, width=200)
         self.scrollable_frame.grid(row=0, column=0, sticky="nswe")
 
         # NOTES
@@ -200,7 +200,7 @@ def get_color_for_roll(total: int | str, num_dice: int | str, num_sides: int | s
 if __name__ == "__main__":
     root = ctk.CTk()
     root.title("Dice Roll Log")
-    root.geometry("800x500")
+    root.geometry("1000x500")
 
     log_columns = ["Name", "Result", "Rolls"]
     log_table = LogTable(root, columns=log_columns)

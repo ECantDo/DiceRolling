@@ -2,6 +2,9 @@ import random
 import customtkinter as ctk
 from PIL import Image
 from PIL import ImageTk
+import os
+
+import roller_app
 
 
 class SingleDiceRollerFrame(ctk.CTkFrame):
@@ -20,7 +23,8 @@ class SingleDiceRollerFrame(ctk.CTkFrame):
         else:
             self.dice_faces = dice_faces
 
-        self._transparent_dice = ImageTk.PhotoImage(Image.open("assets/diceTransparent.png"))
+        transparent_path = roller_app.resource_path("assets/diceTransparent.png")
+        self._transparent_dice = ImageTk.PhotoImage(Image.open(transparent_path))
 
         self.label = ctk.CTkLabel(self, image=self.dice_faces[0], text="")
         self.label.pack(padx=10, pady=10)
@@ -97,9 +101,9 @@ class DiceApp(ctk.CTkFrame):
         self.rolling = False
 
         # Load all images
-        self.dice_frames = [ImageTk.PhotoImage(Image.open(path).resize((128, 128))) for path in
-                            [f"assets/d6/dice{i}.png" for i in range(1, 7)]
-                            ]
+        dice_folder = roller_app.resource_path('assets/d6')
+        dice_paths = [os.path.join(dice_folder, f'dice{i}.png') for i in range(1, 7)]
+        self.dice_frames = [ImageTk.PhotoImage(Image.open(path).resize((128, 128))) for path in dice_paths]
 
         # Make the frame
         self.dice_container = ctk.CTkFrame(self, width=self.container_width, height=self.container_height)

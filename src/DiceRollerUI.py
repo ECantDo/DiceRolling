@@ -4,6 +4,7 @@ import requests
 from dice_logic import roll_dice
 from settings_manager import SettingsManager
 from script_updater import CURRENT_VERSION
+from diceRolling import DiceApp
 
 ctk.set_appearance_mode("dark")  # "dark" or "light"
 ctk.set_default_color_theme("blue")
@@ -27,8 +28,10 @@ class DiceRollerUI(ctk.CTk):
         self.logs: list[tuple[str, bool]] = []
 
         self.title("Dice Roller Client UI Prototype :3")
-        self.geometry("550x600")
+        self.geometry("1350x600")
         self.resizable(False, False)
+
+        main_content_frame = ctk.CTkFrame(self, width=500, fg_color=MENU_BG)
 
         # Top bar frame
         top_bar = ctk.CTkFrame(self, fg_color=MENU_BG, height=40)
@@ -86,7 +89,7 @@ class DiceRollerUI(ctk.CTk):
         btn_set_name.pack(fill="x", pady=0)
 
         # === Top Frame: Inputs ===
-        self.top_frame = ctk.CTkFrame(self, fg_color=MENU_BG)
+        self.top_frame = ctk.CTkFrame(main_content_frame, fg_color=MENU_BG)
         self.top_frame.pack(padx=20, pady=15, fill="x")
 
         # Dice number and sides horizontally
@@ -108,9 +111,14 @@ class DiceRollerUI(ctk.CTk):
         self.btn_roll.pack(pady=(10, 15), fill="x")
 
         # Scrollable text box for logs/results
-        self.log_text = ctk.CTkTextbox(self, width=460, height=350, font=used_font)
-        self.log_text.pack(padx=20, pady=(0, 20), fill="both", expand=True)
+        self.log_text = ctk.CTkTextbox(main_content_frame, width=460, height=350, font=used_font)
+        self.log_text.pack(side="left", fill="both", expand=True)
         self.log_text.configure(state="disabled")  # Readonly for now
+
+        main_content_frame.pack(side="left", padx=(10, 0), pady=5, fill="both", expand=True)
+
+        self.dice_app = DiceApp(self)
+        self.dice_app.pack(side="right", fill='none', anchor="center", padx=10, pady=5)
 
         self.after(200, self.startup_dialogs)
         pass
@@ -130,10 +138,10 @@ class DiceRollerUI(ctk.CTk):
         self.menu_frame.place_forget()
         dialog = InputDialog(self, "url", self.server_url)
         self.wait_window(dialog)
-        if dialog.new_value:
-            self.server_url = dialog.new_value
-            if not self.server_url.endswith("/roll"):
-                self.server_url = self.server_url.rstrip("/") + "/roll"
+
+        self.server_url = dialog.new_value
+        if (self.server_url is not None and (len(self.server_url) != 0)) and (not self.server_url.endswith("/roll")):
+            self.server_url = self.server_url.rstrip("/") + "/roll"
 
     def open_name_dialog(self):
         self.menu_frame.place_forget()
@@ -152,6 +160,14 @@ class DiceRollerUI(ctk.CTk):
             self.open_name_dialog()
 
     def perform_roll(self):
+        dice = None
+
+        def v_roll():
+            if sides == 6 and dice:
+                self.dice_app.set_dice_count(len(dice))
+                self.dice_app.roll_dice(dice)
+                pass
+
         try:
             num_dice = int(self.entry_num_dice.get())
             sides = int(self.entry_sides.get())
@@ -163,8 +179,10 @@ class DiceRollerUI(ctk.CTk):
             # Local roll
             dice, total = roll_dice(num_dice, sides)
             if dice is None:
+                self.dice_app.set_dice_count(0)
                 self.append_log(f"Local roll: Total: {total} | {num_dice}d{sides}")
             else:
+                v_roll()
                 self.append_log(f"Local roll: Total: {total} | {num_dice}d{sides} | Dice: {dice}")
         else:
             payload = {
@@ -186,12 +204,15 @@ class DiceRollerUI(ctk.CTk):
                 else:
                     dice = data["dice"]
                     if dice is None:
+                        self.dice_app.set_dice_count(0)
                         self.append_log(f"Total: {data['result']} | {num_dice}d{sides}")
                     else:
+                        v_roll()
                         self.append_log(f"Total: {data['result']} | {num_dice}d{sides} | Dice: {dice} ")
 
             except Exception as e:
                 self.append_log(f"Error contacting server: {e}", error=True)
+                return
 
         pass
 
