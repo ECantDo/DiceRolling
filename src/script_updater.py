@@ -7,7 +7,7 @@ import subprocess
 GITHUB_API_RELEASES_URL = "https://api.github.com/repos/{owner}/{repo}/releases/latest"
 GITHUB_OWNER = "ECantDo"
 GITHUB_REPO = "DiceRolling"
-CURRENT_VERSION = "1.2.3"
+CURRENT_VERSION = "1.2.4"
 EXECUTABLE_NAME = "roller_app.exe"
 
 
