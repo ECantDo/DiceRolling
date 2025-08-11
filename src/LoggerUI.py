@@ -16,6 +16,7 @@ class LogTable(ctk.CTkFrame):
             self.columns = ["Name", "Result", "Rolls"]
 
         self.rows = []
+        self.notes_row = None
 
         self.scrollable_frame = ctk.CTkScrollableFrame(self, corner_radius=1)
         self.scrollable_frame.grid(row=0, column=0, sticky="nswe")
@@ -84,12 +85,8 @@ class LogTable(ctk.CTkFrame):
         for i in range(len(self.columns)):
             row_frame.grid_columnconfigure(i, weight=1, uniform="col")
 
-        def on_click(event, note=notes):
-            if note:
-                import tkinter.messagebox as mb
-                mb.showinfo("Notes", note)
-                pass
-            pass
+        def on_click(event, idx=len(self.rows), note=notes):
+            self.toggle_notes(idx, note)
 
         row_frame.bind("<Button-1>", on_click)
         for lbl in labels:
@@ -108,6 +105,44 @@ class LogTable(ctk.CTkFrame):
                 widget.destroy()
         self.rows.clear()
         pass
+
+    def toggle_notes(self, row_index, note):
+        # Remove any existing notes panel first
+        if self.notes_row is not None:
+            self.notes_row.destroy()
+            self.notes_row = None
+            # Reset grid rows of rows below notes
+            self._refresh_row_positions()
+
+            # If clicked same row again, just close and return
+            if self.notes_row == row_index:
+                return
+
+        if not note:
+            return  # No notes to show
+
+            # Insert a new frame just below the clicked row for the notes
+        note_frame = ctk.CTkFrame(self.scrollable_frame, fg_color="#2c3e50", corner_radius=4)
+        note_label = ctk.CTkLabel(note_frame, text=note, wraplength=500, justify="left")
+        note_label.pack(padx=10, pady=5)
+
+        # Insert in grid below clicked row (row_index + 1)
+        note_frame.grid(row=row_index + 1, column=0, columnspan=len(self.columns), sticky="ew", padx=20, pady=(0, 10))
+        self.notes_row = note_frame
+
+        # Push rows below notes down by 1
+        self._refresh_row_positions(skip=row_index + 1)
+
+    def _refresh_row_positions(self, skip=None):
+        # Re-grid all rows to keep correct row order, adjusting for inserted notes row
+        row_num = 1
+        for idx, (frame, labels) in enumerate(self.rows):
+            if skip is not None and row_num == skip:
+                row_num += 1  # leave a gap for notes row
+            frame.grid_configure(row=row_num)
+            for label in labels:
+                label.grid_configure(row=0)
+            row_num += 1
 
 
 def get_default_color() -> str:

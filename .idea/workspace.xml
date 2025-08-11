@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Updated version number">
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Basic clicking on log entry to see the dice rolled">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LoggerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoggerUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerLogGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerLogGUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +84,7 @@
       <recent name="E:\PycharmProjects\DiceRoller\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Batch.start_client">
+  <component name="RunManager" selected="Batch.start_server">
     <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -191,8 +189,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Batch.start_client" />
         <item itemvalue="Batch.start_server" />
+        <item itemvalue="Batch.start_client" />
         <item itemvalue="Python.LoggerUI" />
         <item itemvalue="Python.generate_key" />
         <item itemvalue="Batch.start_server (1)" />
@@ -495,7 +493,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754884543578</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Basic clicking on log entry to see the dice rolled">
+      <option name="closed" value="true" />
+      <created>1754886094426</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1754886094426</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -522,7 +528,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Copying files from original project to make better" />
     <MESSAGE value="File structuring" />
     <MESSAGE value="Moved main to the app file" />
     <MESSAGE value="New rolling functions.&#10;&#10;One master dice roll function, to separate 2 dice rollers, one for a very large number of dice, one for a smaller amount." />
@@ -547,6 +552,7 @@
     <MESSAGE value="Changed directory where the settings will be" />
     <MESSAGE value="GUI for logging on server side" />
     <MESSAGE value="Updated version number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated version number" />
+    <MESSAGE value="Basic clicking on log entry to see the dice rolled" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic clicking on log entry to see the dice rolled" />
   </component>
 </project>
