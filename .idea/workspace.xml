@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Downloads needed assets&#10;&#10;hotfix" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -600,7 +600,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754956176066</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset...">
+      <option name="closed" value="true" />
+      <created>1754956683582</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1754956683582</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -627,7 +635,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removing my settings" />
     <MESSAGE value="More ignoring" />
     <MESSAGE value="Should do updates?" />
     <MESSAGE value="Changed version number to test updating" />
@@ -652,6 +659,7 @@
     <MESSAGE value="Downloads needed assets?" />
     <MESSAGE value="Downloads needed assets" />
     <MESSAGE value="Downloads needed assets&#10;&#10;hotfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Downloads needed assets&#10;&#10;hotfix" />
+    <MESSAGE value="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset..." />
   </component>
 </project>

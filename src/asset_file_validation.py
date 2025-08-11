@@ -35,7 +35,7 @@ def check_and_download_assets(base_folder: str):
         "diceTransparent.png"
         # Add any other files you want to check
     ]
-
+    print("Checking Assets...")
     for relative_path in needed_files:
         local_path = os.path.join(base_folder, relative_path)
         file_url = base_url + relative_path.replace("\\", "/")
