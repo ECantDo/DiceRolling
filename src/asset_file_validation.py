@@ -23,7 +23,7 @@ def check_and_download_assets(base_folder: str):
     Adjust file list and base URL to your setup.
     """
     # Base URL of your raw GitHub assets folder
-    base_url = "https://raw.githubusercontent.com/ECantDo/DiceRolling/master/assets/"
+    base_url = "https://raw.githubusercontent.com/ECantDo/DiceRolling/master/src/assets/"
 
     needed_files = [
         "d6/dice1.png",
