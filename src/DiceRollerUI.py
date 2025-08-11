@@ -258,10 +258,13 @@ class InputDialog(ctk.CTkToplevel):
         self.entry.insert(0, current_value)
         self.entry.focus()
 
-        ctk.CTkButton(self, text="OK", command=self.on_ok, font=fonts[2]).pack(pady=15)
+        ctk.CTkButton(self, text="OK", command=lambda: self.on_ok(selection != "url"), font=fonts[2]).pack(pady=15)
 
-    def on_ok(self):
-        self.new_value = self.entry.get()[:20]
+    def on_ok(self, limit: bool):
+        if limit:
+            self.new_value = self.entry.get()[:20]
+        else:
+            self.new_value = self.entry.get()
         self.destroy()
 
 

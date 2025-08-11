@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Limiting character counts in input dialogs.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Reorganizing files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceRollerUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/dice_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice_logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/script_updater.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/settings_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceRollerUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/roller_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_functions/client_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_functions/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/start_client.bat" beforeDir="false" afterPath="$PROJECT_DIR$/start/start_client.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/start_server.bat" beforeDir="false" afterPath="$PROJECT_DIR$/start/start_server.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +30,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="betterUI" />
+        <entry key="$PROJECT_DIR$" value="server_ui" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,6 +62,7 @@
     "Batch.start_client.executor": "Run",
     "Batch.start_server (1).executor": "Run",
     "Batch.start_server.executor": "Run",
+    "Python.LoggerUI.executor": "Run",
     "Python.generate_key.executor": "Run",
     "Python.gui.executor": "Run",
     "Python.roller_app - client.executor": "Run",
@@ -87,9 +80,13 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\PycharmProjects\DiceRoller\src" />
+      <recent name="E:\PycharmProjects\DiceRoller\src\server_functions" />
+      <recent name="E:\PycharmProjects\DiceRoller\src\helper" />
+      <recent name="E:\PycharmProjects\DiceRoller\helper" />
+      <recent name="E:\PycharmProjects\DiceRoller\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.roller_app - client">
+  <component name="RunManager" selected="Batch.start_client">
     <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,7 +114,7 @@
       <option name="PARAMETERS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="generate_key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="LoggerUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DiceRoller" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,7 +127,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/generate_key.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/LoggerUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,11 +146,11 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="SDK_NAME" value="Python 3.12 (DiceRoller)" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/roller_app.py" />
+      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\roller_app.py" />
       <option name="PARAMETERS" value="--mode client" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -190,15 +187,15 @@
       <item itemvalue="Batch.start_server" />
       <item itemvalue="Python.roller_app - client" />
       <item itemvalue="Python.roller_app" />
-      <item itemvalue="Python.generate_key" />
+      <item itemvalue="Python.LoggerUI" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.roller_app" />
         <item itemvalue="Batch.start_client" />
+        <item itemvalue="Python.roller_app" />
+        <item itemvalue="Python.LoggerUI" />
         <item itemvalue="Batch.start_server (1)" />
         <item itemvalue="Batch.start_server" />
-        <item itemvalue="Python.generate_key" />
       </list>
     </recent_temporary>
   </component>
@@ -458,13 +455,13 @@
       <option name="project" value="LOCAL" />
       <updated>1754821440520</updated>
     </task>
-    <task id="LOCAL-00031" summary="Limiting character counts in input dialogs.">
+    <task id="LOCAL-00031" summary="Reorganizing files">
       <option name="closed" value="true" />
-      <created>1754869281929</created>
+      <created>1754861680619</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1754869281929</updated>
+      <updated>1754861680619</updated>
     </task>
     <option name="localTasksCounter" value="32" />
     <servers />
@@ -514,7 +511,7 @@
     <MESSAGE value="Forgot to store dice side counts" />
     <MESSAGE value="Forgot to display dice side counts" />
     <MESSAGE value="Fixing when to check for the secret key" />
-    <MESSAGE value="Limiting character counts in input dialogs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Limiting character counts in input dialogs." />
+    <MESSAGE value="Reorganizing files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganizing files" />
   </component>
 </project>
