@@ -22,7 +22,7 @@ class ServerLogGUI:
         def poll_queue():
             while not self.log_q.empty():
                 row_data = self.log_q.get()
-                log_table.add_row(row_data)
+                log_table.add_row(*row_data)
             root.after(100, poll_queue)
 
         poll_queue()

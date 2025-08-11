@@ -37,12 +37,14 @@ class LogTable(ctk.CTkFrame):
             self.grid_columnconfigure(i, weight=1)
         pass
 
-    def add_row(self, row_data: tuple[str, int, int, int]):
+    def add_row(self, row_data: tuple[str, int, int, int], notes: str = None):
         """
         Add a row to the log table
         Single use case currently, might change later, BUT
         :param row_data: Should be matching the column data
-        FORMAT: (<name>, <total>, <number of dice>, <sides on dice>
+         FORMAT: (<name>, <total>, <number of dice>, <sides on dice>
+        :param notes: Any additional notes that should be displayed
+
         """
         # Shift existing rows down
         for r, (frame, labels) in enumerate(self.rows, start=1):
@@ -82,6 +84,18 @@ class LogTable(ctk.CTkFrame):
         for i in range(len(self.columns)):
             row_frame.grid_columnconfigure(i, weight=1, uniform="col")
 
+        def on_click(event, note=notes):
+            if note:
+                import tkinter.messagebox as mb
+                mb.showinfo("Notes", note)
+                pass
+            pass
+
+        row_frame.bind("<Button-1>", on_click)
+        for lbl in labels:
+            lbl.bind("<Button-1>", on_click)
+
+        # Insert it :)
         self.rows.insert(0, (row_frame, labels))
         pass
 

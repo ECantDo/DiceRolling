@@ -11,7 +11,7 @@ from dice_logic import roll_dice, sign_entry, append_log
 app = Flask(__name__)
 LOG_FILE = Path("../roll_log_server.ndjson")
 
-log_queue = None
+log_queue: queue.Queue | None = None
 
 SECRET_KEY = b"this is not a valid key"
 
@@ -56,15 +56,15 @@ def roll_endpoint():
     entry["signature"] = signature
 
     append_log(entry, LOG_FILE)
-    log_event((player, result, num_dice, num_sides))
+    log_event([(player, result, num_dice, num_sides), dice])
     return jsonify(entry)
 
 
-def run_server(queue):
+def run_server(log_q):
     # context = ('cert.pem', 'key.pem')  # Use your SSL cert and key here
     # app.run(host="0.0.0.0", port=5000, ssl_context=context)
     global SECRET_KEY, log_queue
-    log_queue = queue
+    log_queue = log_q
 
     key_b64 = os.environ.get("DICE_LOG_SECRET")
     if not key_b64:

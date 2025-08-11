@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Changed directory where the settings will be">
-      <change afterPath="$PROJECT_DIR$/src/ServerLogGUI.py" afterDir="false" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Updated version number">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/roller_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoggerUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerLogGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerLogGUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -479,7 +479,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754883198114</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="GUI for logging on server side">
+      <option name="closed" value="true" />
+      <created>1754884479809</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1754884479809</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Updated version number">
+      <option name="closed" value="true" />
+      <created>1754884543578</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1754884543578</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -529,6 +545,8 @@
     <MESSAGE value="Reorganizing files" />
     <MESSAGE value="Forgot to update version number" />
     <MESSAGE value="Changed directory where the settings will be" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed directory where the settings will be" />
+    <MESSAGE value="GUI for logging on server side" />
+    <MESSAGE value="Updated version number" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated version number" />
   </component>
 </project>
