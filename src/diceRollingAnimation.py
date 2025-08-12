@@ -6,9 +6,15 @@ import os
 
 import roller_app
 
+# For later use when adding more dice
+_current_dice_type_idx = {4: 0, 6: 1, 8: 2, 10: 3, 12: 4, 20: 5}
+
+
+# _dice_face_indexing: tuple[int, int, int, int, int, int] = (4, 6, 8, 10, 12, 20)
+
 
 class SingleDiceRollerFrame(ctk.CTkFrame):
-    def __init__(self, master, dice_faces: list[str] | list[ImageTk.PhotoImage], roll_duration: int = 800,
+    def __init__(self, master, dice_faces: list[list[str]] | list[list[ImageTk.PhotoImage]], roll_duration: int = 800,
                  roll_interval: int = 80, **kwargs):
         """
         :param dice_faces: list of filepaths to dice face images, index 0 = face 1, etc., or a list of images
@@ -18,15 +24,16 @@ class SingleDiceRollerFrame(ctk.CTkFrame):
         super().__init__(master, **kwargs)
 
         # Load the images once
-        if dice_faces is list[str]:
-            self.dice_faces = [ImageTk.PhotoImage(Image.open(path).resize((128, 128))) for path in dice_faces]
+        if isinstance(dice_faces[0][0], str):
+            self.dice_faces = [[ImageTk.PhotoImage(Image.open(path).resize((128, 128))) for path in dice_faces_set]
+                               for dice_faces_set in dice_faces]
         else:
             self.dice_faces = dice_faces
 
         transparent_path = roller_app.resource_path("assets/diceTransparent.png")
         self._transparent_dice = ImageTk.PhotoImage(Image.open(transparent_path))
 
-        self.label = ctk.CTkLabel(self, image=self.dice_faces[0], text="")
+        self.label = ctk.CTkLabel(self, image=self._transparent_dice, text="")
         self.label.pack(padx=10, pady=10)
 
         self.rolling = False
@@ -38,7 +45,7 @@ class SingleDiceRollerFrame(ctk.CTkFrame):
 
         pass
 
-    def roll(self, result: int | None):
+    def roll(self, result: int | None, number_sides: int):
         if self.rolling:
             return  # already rolling
 
@@ -47,35 +54,37 @@ class SingleDiceRollerFrame(ctk.CTkFrame):
         self.current_after_id = None
         self.previous_roll_face = None
 
+        if number_sides not in (4, 6, 8, 10, 12, 20):
+            return  # Cant roll unsupported dice
         if result is None:
-            result = random.randint(1, 6)
-        elif not (1 <= result <= 6):
-            return  # Cant roll a die with more than 6, or less than 1 sides
+            result = random.randint(1, number_sides)
+        elif not (1 <= result <= number_sides):
+            return  # Cant roll a die with more than ... the sides, or less than 1 sides
 
-        self._roll_animation(result)
+        self._roll_animation(result, number_sides)
         pass
 
-    def _roll_animation(self, result: int):
+    def _roll_animation(self, result: int, num_sides: int):
         if self.elapsed >= self.roll_duration:
             # Roll finished
-            self.label.configure(image=self.dice_faces[result - 1])
+            self.label.configure(image=self.dice_faces[_current_dice_type_idx[num_sides]][result - 1])
             self.rolling = False
             return
 
         # Random face "rolling"
         if self.previous_roll_face is None:
-            face_idx = random.randint(0, 5)
+            face_idx = random.randint(0, num_sides - 1)
         else:
-            face_idx = random.randint(0, 4)
+            face_idx = random.randint(0, num_sides - 2)
             if face_idx >= self.previous_roll_face:
                 face_idx += 1
 
         self.previous_roll_face = face_idx
 
-        self.label.configure(image=self.dice_faces[face_idx])
+        self.label.configure(image=self.dice_faces[_current_dice_type_idx[num_sides]][face_idx])
 
         self.elapsed += self.roll_interval
-        self.current_after_id = self.after(self.roll_interval, lambda: self._roll_animation(result))
+        self.current_after_id = self.after(self.roll_interval, lambda: self._roll_animation(result, num_sides))
         pass
 
     def hide(self):
@@ -85,10 +94,6 @@ class SingleDiceRollerFrame(ctk.CTkFrame):
     def show(self):
         self.label.configure(image=self.dice_faces[self.previous_roll_face])
         pass
-
-
-# For later use when adding more dice
-__dice_face_indexing: tuple[int, int, int, int, int, int] = (4, 6, 8, 10, 12, 20)
 
 
 class DiceApp(ctk.CTkFrame):
@@ -101,9 +106,7 @@ class DiceApp(ctk.CTkFrame):
         self.rolling = False
 
         # Load all images
-        dice_folder = roller_app.resource_path('assets/d6')
-        dice_paths = [os.path.join(dice_folder, f'dice{i}.png') for i in range(1, 7)]
-        self.dice_frames = [ImageTk.PhotoImage(Image.open(path).resize((128, 128))) for path in dice_paths]
+        self.dice_frames = _load_all_dice_faces()
 
         # Make the frame
         self.dice_container = ctk.CTkFrame(self, width=self.container_width, height=self.container_height)
@@ -140,9 +143,10 @@ class DiceApp(ctk.CTkFrame):
             else:
                 die.hide()  # hide dice
 
-    def roll_dice(self, results: list[int] | None):
+    def roll_dice(self, results: list[int] | None, number_of_sides: int):
         """
         Roll all the dice with either a random outcome, or a pre-set outcome
+        :param number_of_sides: The number of sides the dice to roll has
         :param results: If None; will make all dice that exist roll randomly, otherwise, the dice will be remade, then
         rolled with the expected outcomes
         :return:
@@ -158,7 +162,7 @@ class DiceApp(ctk.CTkFrame):
         for i, die in enumerate(self.dice_widgets):
             if i >= len(results):
                 break
-            die.roll(results[i])
+            die.roll(results[i], number_of_sides)
         self.rolling = False
         pass
 
@@ -166,6 +170,7 @@ class DiceApp(ctk.CTkFrame):
 
 
 def _compute_dice_location(idx: int, count: int) -> tuple[int, int]:
+    # TODO: Simplify
     row = 0 if count <= 5 else (0 if idx < 5 else 1)
     if count == 1:
         col = 2  # center single die in middle column (0-based)
@@ -190,6 +195,48 @@ def _compute_dice_location(idx: int, count: int) -> tuple[int, int]:
         col = idx % 5
         row = 0 if idx < 5 else 1
     return row, col
+
+
+def _load_all_dice_faces():
+    """
+    Loads dice faces from assets folder.
+    Structure: assets/d6/dice1.png ... assets/d20/dice20.png
+    Returns: list[list[ImageTk.PhotoImage]]
+    """
+    dice_types = {
+        "d4": 4,
+        "d6": 6,
+        "d8": 8,
+        "d10": 10,
+        "d12": 12,
+        "d20": 20
+    }
+
+    all_dice_faces = []
+
+    for dice_name, face_count in dice_types.items():
+        dice_folder = roller_app.resource_path(f'assets/{dice_name}')
+
+        if not os.path.isdir(dice_folder):
+            print(f"[WARNING] Dice folder missing: {dice_folder}")
+            all_dice_faces.append([])  # keep index alignment
+            continue
+
+        faces = []
+        for i in range(1, face_count + 1):
+            path = os.path.join(dice_folder, f'dice{i}.png')
+            if not os.path.isfile(path):
+                print(f"Missing dice face: {path}")
+                continue
+            try:
+                img = Image.open(path).resize((128, 128))
+                faces.append(ImageTk.PhotoImage(img))
+            except Exception as e:
+                print(f"Error loading {path}: {e}")
+
+        all_dice_faces.append(faces)
+
+    return all_dice_faces
 
 
 if __name__ == "__main__":

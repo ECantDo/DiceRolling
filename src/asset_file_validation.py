@@ -26,6 +26,10 @@ def check_and_download_assets(base_folder: str):
     base_url = "https://raw.githubusercontent.com/ECantDo/DiceRolling/master/src/assets/"
 
     needed_files = [
+        "d4/dice1.png",
+        "d4/dice2.png",
+        "d4/dice3.png",
+        "d4/dice4.png",
         "d6/dice1.png",
         "d6/dice2.png",
         "d6/dice3.png",

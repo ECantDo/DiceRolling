@@ -4,3 +4,6 @@
 /*.ndjson
 /*.spec
 /src/generate_key.py
+/src/assets/dice.psd
+/dist/
+/build/

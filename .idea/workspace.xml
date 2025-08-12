@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset..." />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset...">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceRollerUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asset_file_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/asset_file_validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/diceRolling.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/diceRollingAnimation.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +60,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "Batch.start_client (1).executor": "Run",
     "Batch.start_client.executor": "Run",
     "Batch.start_server (1).executor": "Run",
@@ -123,7 +130,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="diceRolling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="diceRollingAnimation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DiceRoller" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,7 +143,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/diceRolling.py" />
+      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\diceRollingAnimation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,7 +201,7 @@
       <item itemvalue="Batch.start_client" />
       <item itemvalue="Batch.start_server" />
       <item itemvalue="Python.roller_app - client" />
-      <item itemvalue="Python.diceRolling" />
+      <item itemvalue="Python.diceRollingAnimation" />
       <item itemvalue="Python.LoggerUI" />
       <item itemvalue="Python.generate_key" />
     </list>
@@ -202,7 +209,7 @@
       <list>
         <item itemvalue="Batch.start_client" />
         <item itemvalue="Batch.start_server" />
-        <item itemvalue="Python.diceRolling" />
+        <item itemvalue="Python.diceRollingAnimation" />
         <item itemvalue="Python.LoggerUI" />
         <item itemvalue="Python.generate_key" />
       </list>
@@ -608,7 +615,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754956683582</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset...">
+      <option name="closed" value="true" />
+      <created>1754956784071</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1754956784071</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

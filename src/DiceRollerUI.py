@@ -4,7 +4,7 @@ import requests
 from dice_logic import roll_dice
 from settings_manager import SettingsManager
 from script_updater import CURRENT_VERSION
-from diceRolling import DiceApp
+from diceRollingAnimation import DiceApp
 
 ctk.set_appearance_mode("dark")  # "dark" or "light"
 ctk.set_default_color_theme("blue")
@@ -163,9 +163,9 @@ class DiceRollerUI(ctk.CTk):
         dice = None
 
         def v_roll():
-            if sides == 6 and dice:
+            if sides in (4, 6) and dice:  # TODO: Fill out with the other supported dice types
                 self.dice_app.set_dice_count(len(dice))
-                self.dice_app.roll_dice(dice)
+                self.dice_app.roll_dice(dice, sides)
                 pass
             else:
                 self.dice_app.set_dice_count(0)
