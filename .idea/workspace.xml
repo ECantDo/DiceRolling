@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset...">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Added support for more, different, dice&#10;&#10;Specifically the d4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceRollerUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/asset_file_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/asset_file_validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diceRolling.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/diceRollingAnimation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,24 +56,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Batch.start_client (1).executor": "Run",
-    "Batch.start_client.executor": "Run",
-    "Batch.start_server (1).executor": "Run",
-    "Batch.start_server.executor": "Run",
-    "Python.LoggerUI.executor": "Run",
-    "Python.diceRolling.executor": "Run",
-    "Python.generate_key.executor": "Run",
-    "Python.gui.executor": "Run",
-    "Python.roller_app - client.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/PycharmProjects/DiceRoller/dist"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Batch.start_client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Batch.start_client.executor&quot;: &quot;Run&quot;,
+    &quot;Batch.start_server (1).executor&quot;: &quot;Run&quot;,
+    &quot;Batch.start_server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LoggerUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.diceRolling.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_key.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.roller_app - client.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/PycharmProjects/DiceRoller/dist&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\PycharmProjects\DiceRoller\dist" />
@@ -230,22 +228,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754791583129</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Copying files from original project to make better">
-      <option name="closed" value="true" />
-      <created>1754791635065</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1754791635065</updated>
-    </task>
-    <task id="LOCAL-00002" summary="File structuring">
-      <option name="closed" value="true" />
-      <created>1754792536721</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1754792536721</updated>
     </task>
     <task id="LOCAL-00003" summary="File structuring">
       <option name="closed" value="true" />
@@ -623,7 +605,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754956784071</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Added support for more, different, dice&#10;&#10;Specifically the d4">
+      <option name="closed" value="true" />
+      <created>1754966884832</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1754966884832</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Added support for more, different, dice&#10;&#10;Specifically the d4">
+      <option name="closed" value="true" />
+      <created>1754967019349</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1754967019349</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -650,7 +648,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="More ignoring" />
     <MESSAGE value="Should do updates?" />
     <MESSAGE value="Changed version number to test updating" />
     <MESSAGE value="Updated to use a now secret key for secure logging :)" />
@@ -675,6 +672,7 @@
     <MESSAGE value="Downloads needed assets" />
     <MESSAGE value="Downloads needed assets&#10;&#10;hotfix" />
     <MESSAGE value="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset..." />
+    <MESSAGE value="Added support for more, different, dice&#10;&#10;Specifically the d4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added support for more, different, dice&#10;&#10;Specifically the d4" />
   </component>
 </project>

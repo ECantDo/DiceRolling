@@ -163,7 +163,7 @@ class DiceRollerUI(ctk.CTk):
         dice = None
 
         def v_roll():
-            if sides in (4, 6) and dice:  # TODO: Fill out with the other supported dice types
+            if sides in (4, 6, 8, 10, 12, 20) and dice:
                 self.dice_app.set_dice_count(len(dice))
                 self.dice_app.roll_dice(dice, sides)
                 pass
