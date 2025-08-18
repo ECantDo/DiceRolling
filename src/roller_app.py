@@ -1,14 +1,14 @@
 # file: roller_app.py
 import threading
 
-import script_updater, server_module, DiceRollerUI, asset_file_validation
+import script_updater, server_module, dice_roller_ui, asset_file_validation
 import argparse
 import queue
 
 import os
 import sys
 
-from ServerLogGUI import ServerLogGUI
+from server_log_gui import ServerLogGUI
 
 
 def run_server():

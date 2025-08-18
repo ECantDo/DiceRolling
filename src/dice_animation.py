@@ -106,7 +106,9 @@ class DiceApp(ctk.CTkFrame):
         self.rolling = False
 
         # Load all images
-        self.dice_frames = _load_all_dice_faces()
+        self.dice_frames = _load_all_dice_faces(
+            {"d4": 4, "d6": 6, "d8": 8, "d10": 10, "d12": 12, "d20": 20}
+        )
 
         # Make the frame
         self.dice_container = ctk.CTkFrame(self, width=self.container_width, height=self.container_height)
@@ -197,20 +199,21 @@ def _compute_dice_location(idx: int, count: int) -> tuple[int, int]:
     return row, col
 
 
-def _load_all_dice_faces():
+def _load_dice_file_asset():
+
+    pass
+
+
+def _load_all_dice_faces(dice_names: dict = None):
     """
     Loads dice faces from assets folder.
     Structure: assets/d6/dice1.png ... assets/d20/dice20.png
     Returns: list[list[ImageTk.PhotoImage]]
     """
-    dice_types = {
-        "d4": 4,
-        "d6": 6,
-        "d8": 8,
-        "d10": 10,
-        "d12": 12,
-        "d20": 20
-    }
+    if dice_names is not None:
+        dice_types = dice_names
+    else:
+        pass
 
     all_dice_faces = []
 

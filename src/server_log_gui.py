@@ -1,5 +1,5 @@
 import customtkinter as ctk
-from LoggerUI import LogTable  # import your LogTable class here
+from logger_ui import LogTable  # import your LogTable class here
 
 
 class ServerLogGUI:

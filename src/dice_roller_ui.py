@@ -4,7 +4,7 @@ import requests
 from dice_logic import roll_dice
 from settings_manager import SettingsManager
 from script_updater import CURRENT_VERSION
-from diceRollingAnimation import DiceApp
+from dice_animation import DiceApp
 
 ctk.set_appearance_mode("dark")  # "dark" or "light"
 ctk.set_default_color_theme("blue")
@@ -21,7 +21,7 @@ HOVER_BG = "#444444"  # lighter gray on hover
 #   - Find folders for all the d dice instead of hardcode for the d4, d6, 8, 10, 12, and 20 to allow for additions
 #   of any dice type.
 #   - Timestamp in the comments for the logs.
-#   - Version number top left.
+#   - Expected Value notes
 #   - Iterate through the log list to deselect
 #   - DM logs
 
