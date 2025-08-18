@@ -17,6 +17,15 @@ MENU_BG = "#222222"  # dark gray background for dropdown
 HOVER_BG = "#444444"  # lighter gray on hover
 
 
+# TODO: Update for d10
+#   - Find folders for all the d dice instead of hardcode for the d4, d6, 8, 10, 12, and 20 to allow for additions
+#   of any dice type.
+#   - Timestamp in the comments for the logs.
+#   - Version number top left.
+#   - Iterate through the log list to deselect
+#   - DM logs
+
+
 class DiceRollerUI(ctk.CTk):
     def __init__(self):
         super().__init__()
@@ -37,9 +46,17 @@ class DiceRollerUI(ctk.CTk):
         top_bar = ctk.CTkFrame(self, fg_color=MENU_BG, height=40)
         top_bar.pack(fill="x", side="top")
 
-        spacer = ctk.CTkLabel(top_bar, text="")
-        spacer.pack(side="left", expand=True)
+        # spacer = ctk.CTkLabel(top_bar, text="")
+        # spacer.pack(side="left", expand=True)
 
+        # Version Number
+        version_number = ctk.CTkLabel(
+            top_bar,
+            text=f"V {CURRENT_VERSION}",
+            font=("impact", 20, "bold"),
+            text_color="#5F5F5F"
+        )
+        version_number.pack(side="left", padx=(10, 5))
         # Hamburger button
         self.hamburger_button = ctk.CTkButton(
             top_bar,
@@ -186,6 +203,8 @@ class DiceRollerUI(ctk.CTk):
                 v_roll()
                 self.append_log(f"Local roll: Total: {total} | {num_dice}d{sides} | Dice: {dice}")
         else:
+            if num_dice > 1000 and sides > 1000:
+                return
             payload = {
                 "player": self.username,
                 "num_dice": num_dice,
