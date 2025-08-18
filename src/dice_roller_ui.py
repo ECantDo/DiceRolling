@@ -18,9 +18,7 @@ HOVER_BG = "#444444"  # lighter gray on hover
 
 
 # TODO: Update for d10
-#   - Find folders for all the d dice instead of hardcode for the d4, d6, 8, 10, 12, and 20 to allow for additions
-#   of any dice type.
-#   - Timestamp in the comments for the logs.
+#   - Timestamp notes.
 #   - Expected Value notes
 #   - Iterate through the log list to deselect
 #   - DM logs
@@ -158,7 +156,7 @@ class DiceRollerUI(ctk.CTk):
 
         self.server_url = dialog.new_value
         if (self.server_url is not None and (len(self.server_url) != 0)) and (not self.server_url.endswith("/roll")):
-            self.server_url = self.server_url.rstrip("/") + "/roll"
+            self.server_url = self.server_url.rstrip("/")
 
     def open_name_dialog(self):
         self.menu_frame.place_forget()
@@ -213,7 +211,7 @@ class DiceRollerUI(ctk.CTk):
             }
             try:
                 # Timeout is in seconds
-                resp = requests.post(self.server_url, json=payload, timeout=5,
+                resp = requests.post(self.server_url + "/roll", json=payload, timeout=5,
                                      verify=False)
                 resp.raise_for_status()
                 data: dict = resp.json()

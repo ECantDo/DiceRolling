@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Added support for more, different, dice&#10;&#10;Specifically the d4">
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="File renaming">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiceRollerUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceRollerUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/asset_file_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/asset_file_validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice_animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_roller_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice_roller_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/roller_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/roller_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/script_updater.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,24 +58,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Batch.start_client (1).executor&quot;: &quot;Run&quot;,
-    &quot;Batch.start_client.executor&quot;: &quot;Run&quot;,
-    &quot;Batch.start_server (1).executor&quot;: &quot;Run&quot;,
-    &quot;Batch.start_server.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LoggerUI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.diceRolling.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_key.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.roller_app - client.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/PycharmProjects/DiceRoller/dist&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Batch.start_client (1).executor": "Run",
+    "Batch.start_client.executor": "Run",
+    "Batch.start_server (1).executor": "Run",
+    "Batch.start_server.executor": "Run",
+    "Python.LoggerUI.executor": "Run",
+    "Python.diceRolling.executor": "Run",
+    "Python.dice_animation (1).executor": "Run",
+    "Python.generate_key.executor": "Run",
+    "Python.gui.executor": "Run",
+    "Python.roller_app - client.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/PycharmProjects/DiceRoller/dist"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\PycharmProjects\DiceRoller\dist" />
@@ -106,7 +109,7 @@
       <option name="PARAMETERS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="LoggerUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="dice_animation (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DiceRoller" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,7 +122,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/LoggerUI.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/dice_animation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -128,7 +131,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="diceRollingAnimation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="dice_animation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DiceRoller" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,7 +144,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\diceRollingAnimation.py" />
+      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\dice_animation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,7 +153,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="generate_key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="logger_ui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DiceRoller" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,11 +162,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\helper\generate_key.py" />
+      <option name="SCRIPT_NAME" value="E:\PycharmProjects\DiceRoller\src\logger_ui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -199,17 +202,17 @@
       <item itemvalue="Batch.start_client" />
       <item itemvalue="Batch.start_server" />
       <item itemvalue="Python.roller_app - client" />
-      <item itemvalue="Python.diceRollingAnimation" />
-      <item itemvalue="Python.LoggerUI" />
-      <item itemvalue="Python.generate_key" />
+      <item itemvalue="Python.dice_animation (1)" />
+      <item itemvalue="Python.dice_animation" />
+      <item itemvalue="Python.logger_ui" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Batch.start_client" />
+        <item itemvalue="Python.dice_animation (1)" />
         <item itemvalue="Batch.start_server" />
-        <item itemvalue="Python.diceRollingAnimation" />
-        <item itemvalue="Python.LoggerUI" />
-        <item itemvalue="Python.generate_key" />
+        <item itemvalue="Python.dice_animation" />
+        <item itemvalue="Python.logger_ui" />
       </list>
     </recent_temporary>
   </component>
@@ -228,62 +231,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754791583129</updated>
-    </task>
-    <task id="LOCAL-00003" summary="File structuring">
-      <option name="closed" value="true" />
-      <created>1754792566837</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1754792566837</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Moved main to the app file">
-      <option name="closed" value="true" />
-      <created>1754792676580</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1754792676581</updated>
-    </task>
-    <task id="LOCAL-00005" summary="New rolling functions.&#10;&#10;One master dice roll function, to separate 2 dice rollers, one for a very large number of dice, one for a smaller amount.">
-      <option name="closed" value="true" />
-      <created>1754794532339</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1754794532339</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Signing logs in dice logic">
-      <option name="closed" value="true" />
-      <created>1754794713974</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1754794713974</updated>
-    </task>
-    <task id="LOCAL-00007" summary="AHHHH">
-      <option name="closed" value="true" />
-      <created>1754803540812</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1754803540812</updated>
-    </task>
-    <task id="LOCAL-00008" summary="AHHHH">
-      <option name="closed" value="true" />
-      <created>1754806901067</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1754806901067</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Initial UI">
-      <option name="closed" value="true" />
-      <created>1754807899375</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1754807899375</updated>
     </task>
     <task id="LOCAL-00010" summary="UI looking good">
       <option name="closed" value="true" />
@@ -621,7 +568,63 @@
       <option name="project" value="LOCAL" />
       <updated>1754967019349</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="All dice finished?&#10;&#10;I swear, I hope it's all there, and not broken">
+      <option name="closed" value="true" />
+      <created>1754970621923</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1754970621923</updated>
+    </task>
+    <task id="LOCAL-00053" summary="All dice finished?&#10;&#10;I swear, I hope it's all there, and not broken">
+      <option name="closed" value="true" />
+      <created>1754970635791</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1754970635791</updated>
+    </task>
+    <task id="LOCAL-00054" summary="All dice finished?&#10;&#10;I swear, I hope it's all there, and not broken">
+      <option name="closed" value="true" />
+      <created>1754970641402</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1754970641402</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Fixed typo for the d12">
+      <option name="closed" value="true" />
+      <created>1755480317633</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1755480317633</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Added a version number">
+      <option name="closed" value="true" />
+      <created>1755480331449</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1755480331450</updated>
+    </task>
+    <task id="LOCAL-00057" summary="File renaming">
+      <option name="closed" value="true" />
+      <created>1755484227596</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1755484227596</updated>
+    </task>
+    <task id="LOCAL-00058" summary="File renaming">
+      <option name="closed" value="true" />
+      <created>1755484240937</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1755484240937</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -648,10 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Should do updates?" />
-    <MESSAGE value="Changed version number to test updating" />
-    <MESSAGE value="Updated to use a now secret key for secure logging :)" />
-    <MESSAGE value="Forgot to store dice side counts" />
     <MESSAGE value="Forgot to display dice side counts" />
     <MESSAGE value="Fixing when to check for the secret key" />
     <MESSAGE value="Reorganizing files" />
@@ -673,6 +672,10 @@
     <MESSAGE value="Downloads needed assets&#10;&#10;hotfix" />
     <MESSAGE value="Run the download&#10;&#10;Forgot to actually run the asset checker, and forgot an asset..." />
     <MESSAGE value="Added support for more, different, dice&#10;&#10;Specifically the d4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added support for more, different, dice&#10;&#10;Specifically the d4" />
+    <MESSAGE value="All dice finished?&#10;&#10;I swear, I hope it's all there, and not broken" />
+    <MESSAGE value="Fixed typo for the d12" />
+    <MESSAGE value="Added a version number" />
+    <MESSAGE value="File renaming" />
+    <option name="LAST_COMMIT_MESSAGE" value="File renaming" />
   </component>
 </project>

@@ -26,7 +26,7 @@ def run_server():
 def run_client():
     # Client
     print("Starting GUI...")
-    DiceRollerUI.start_gui()
+    dice_roller_ui.start_gui()
     print("Closed GUI")
     # gui_thread = threading.Thread(target=DiceRollerUI.start_gui, daemon=True)
     # gui_thread.start()
