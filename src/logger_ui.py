@@ -18,7 +18,6 @@ class LogTable(ctk.CTkFrame):
             self.columns = ["Name", "Result", "Rolls"]
 
         self.rows = []
-        self.selected_row_index = None
 
         # Scrolling
         self.scrollable_frame = ctk.CTkScrollableFrame(self, corner_radius=1, width=200)
@@ -98,15 +97,13 @@ class LogTable(ctk.CTkFrame):
 
             row_index = len(self.rows) - row_index - 1
             # Remove outline from previously selected row
-            if self.selected_row_index is not None and self.selected_row_index < len(self.rows):
-                old_frame, _, _ = self.rows[self.selected_row_index]
+
+            for old_frame, _, _ in self.rows:
                 old_frame.configure(border_width=0)
 
             # Add outline to newly selected row
             frame, _, _ = self.rows[row_index]
             frame.configure(border_width=2, border_color="#3498db")  # blue outline
-
-            self.selected_row_index = row_index
 
             # Update notes panel
             notes = self.rows[row_index][2]
@@ -154,16 +151,16 @@ class LogTable(ctk.CTkFrame):
         self.rows.clear()
         pass
 
-    def _refresh_row_positions(self, skip=None):
-        # Re-grid all rows accounting for notes row at 'skip' grid row
-        row_num = 1
-        for (frame, labels, note) in self.rows:
-            if skip is not None and row_num >= skip:
-                row_num += 1  # leave a gap for notes row
-            frame.grid_configure(row=row_num)
-            for label in labels:
-                label.grid_configure(row=0)
-            row_num += 1
+    # def _refresh_row_positions(self, skip=None):
+    #     # Re-grid all rows accounting for notes row at 'skip' grid row
+    #     row_num = 1
+    #     for (frame, labels, note) in self.rows:
+    #         if skip is not None and row_num >= skip:
+    #             row_num += 1  # leave a gap for notes row
+    #         frame.grid_configure(row=row_num)
+    #         for label in labels:
+    #             label.grid_configure(row=0)
+    #         row_num += 1
 
 
 def get_default_color() -> str:

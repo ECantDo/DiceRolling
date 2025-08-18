@@ -1,12 +1,13 @@
 # file: server_module.py
 import base64
+from datetime import datetime, timezone
 import queue
 
 from flask import Flask, request, jsonify
 import os
 import time
 from pathlib import Path
-from dice_logic import roll_dice, sign_entry, append_log
+from dice_logic import roll_dice, sign_entry, append_log, expected_roll
 
 app = Flask(__name__)
 LOG_FILE = Path("./roll_log_server.ndjson")
@@ -41,7 +42,7 @@ def roll_endpoint():
         return jsonify({"error": "Invalid dice parameters"}), 400
 
     dice, result = roll_dice(num_dice, num_sides)
-    timestamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    timestamp = datetime.now(timezone.utc).isoformat()
 
     entry = {
         "timestamp": timestamp,
@@ -57,8 +58,16 @@ def roll_endpoint():
     entry["signature"] = signature
 
     append_log(entry, LOG_FILE)
-    log_event([(player, result, num_dice, num_sides), dice])
+    log_event([(player, result, num_dice, num_sides),
+               f"{dice}\nExpected Value: {expected_roll(num_dice, num_sides)}\n"
+               f"Timestamp: {_display_local_time(timestamp)}"])
     return jsonify(entry)
+
+
+def _display_local_time(utc_timestamp: str) -> str:
+    utc_dt = datetime.fromisoformat(utc_timestamp)
+    local_dt = utc_dt.astimezone()  # Converts to local timezone
+    return local_dt.strftime("%Y-%m-%d ~ %I:%M:%S %p")
 
 
 def run_server(log_q):

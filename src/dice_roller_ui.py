@@ -17,10 +17,7 @@ MENU_BG = "#222222"  # dark gray background for dropdown
 HOVER_BG = "#444444"  # lighter gray on hover
 
 
-# TODO: Update for d10
-#   - Timestamp notes.
-#   - Expected Value notes
-#   - Iterate through the log list to deselect
+# TODO:
 #   - DM logs
 
 

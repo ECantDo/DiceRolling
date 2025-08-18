@@ -25,6 +25,11 @@ def roll_small_dice(num_dice, sides) -> tuple[list[int], int]:
     return dice, sum
 
 
+def expected_roll(num_dice: int, sides: int) -> float:
+    return (num_dice * sides + num_dice) / 2
+    pass
+
+
 def roll_dice(num_dice, sides) -> tuple[list[int] | None, int]:
     if num_dice < 1:
         return -1
