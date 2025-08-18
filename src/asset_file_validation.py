@@ -27,12 +27,14 @@ def check_and_download_assets(base_folder: str):
         "d4/dice2.png",
         "d4/dice3.png",
         "d4/dice4.png",
+
         "d6/dice1.png",
         "d6/dice2.png",
         "d6/dice3.png",
         "d6/dice4.png",
         "d6/dice5.png",
         "d6/dice6.png",
+
         "d8/dice1.png",
         "d8/dice2.png",
         "d8/dice3.png",
@@ -41,6 +43,7 @@ def check_and_download_assets(base_folder: str):
         "d8/dice6.png",
         "d8/dice7.png",
         "d8/dice8.png",
+
         "d10/dice1.png",
         "d10/dice2.png",
         "d10/dice3.png",
@@ -51,6 +54,7 @@ def check_and_download_assets(base_folder: str):
         "d10/dice8.png",
         "d10/dice9.png",
         "d10/dice10.png",
+
         "d12/dice1.png",
         "d12/dice2.png",
         "d12/dice3.png",
@@ -60,9 +64,10 @@ def check_and_download_assets(base_folder: str):
         "d12/dice7.png",
         "d12/dice8.png",
         "d12/dice9.png",
-        "d10/dice10.png",
+        "d12/dice10.png",
         "d12/dice11.png",
         "d12/dice12.png",
+
         "d20/dice1.png",
         "d20/dice2.png",
         "d20/dice3.png",
