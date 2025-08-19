@@ -1,13 +1,14 @@
 # file: roller_app.py
+import argparse
+import os
+import queue
+import sys
 import threading
 
-import script_updater, server_module, dice_roller_ui, asset_file_validation
-import argparse
-import queue
-
-import os
-import sys
-
+import asset_file_validation
+import dice_roller_ui
+import script_updater
+import server_module
 from server_log_gui import ServerLogGUI
 
 
