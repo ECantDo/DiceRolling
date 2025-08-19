@@ -10,6 +10,11 @@ GITHUB_REPO = "DiceRolling"
 CURRENT_VERSION = "1.5.0-SNAPSHOT-3"
 EXECUTABLE_NAME = "roller_app.exe"
 
+# TODO:
+#   - Implement an ask to download update
+#   - Get the last step of the download to make a .bat file (or something), and run it to relaunch the program when this
+#     program terminates from the download.  Deleting the .old and the .bat would be helpful too
+
 
 def parse_version(v):
     v = v.lstrip("v")

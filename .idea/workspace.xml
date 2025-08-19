@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Removing unused files.&#10;&#10;Also repurposing one.">
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Optimized imports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asset_file_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/asset_file_validation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dice_roller_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice_roller_ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dm_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dm_logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logger_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/script_updater.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,26 +59,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Batch.start_client (1).executor": "Run",
-    "Batch.start_client.executor": "Run",
-    "Batch.start_server (1).executor": "Run",
-    "Batch.start_server.executor": "Run",
-    "Python.LoggerUI.executor": "Run",
-    "Python.diceRolling.executor": "Run",
-    "Python.dice_animation (1).executor": "Run",
-    "Python.dice_roller_ui.executor": "Run",
-    "Python.generate_key.executor": "Run",
-    "Python.gui.executor": "Run",
-    "Python.roller_app - client.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/PycharmProjects/DiceRoller/dist"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Batch.start_client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Batch.start_client.executor&quot;: &quot;Run&quot;,
+    &quot;Batch.start_server (1).executor&quot;: &quot;Run&quot;,
+    &quot;Batch.start_server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LoggerUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.diceRolling.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dice_animation (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.dice_roller_ui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_key.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.roller_app - client.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/PycharmProjects/DiceRoller/dist&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\PycharmProjects\DiceRoller\dist" />
@@ -90,7 +92,7 @@
       <recent name="E:\PycharmProjects\DiceRoller\helper" />
     </key>
   </component>
-  <component name="RunManager" selected="Batch.start_client">
+  <component name="RunManager" selected="Batch.start_server">
     <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -208,9 +210,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Batch.start_server" />
         <item itemvalue="Batch.start_client" />
         <item itemvalue="Python.dice_roller_ui" />
-        <item itemvalue="Batch.start_server" />
         <item itemvalue="Python.dice_animation (1)" />
         <item itemvalue="Python.dice_animation" />
       </list>
@@ -231,22 +233,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754791583129</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Fresh logic to log the exact dice rolls">
-      <option name="closed" value="true" />
-      <created>1754814158406</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1754814158406</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Server rolls working">
-      <option name="closed" value="true" />
-      <created>1754816781184</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1754816781184</updated>
     </task>
     <task id="LOCAL-00015" summary="Removing my settings">
       <option name="closed" value="true" />
@@ -624,12 +610,38 @@
       <option name="project" value="LOCAL" />
       <updated>1755580237719</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Basic password getter&#10;&#10;Getting the password for the DM logs interface.">
+      <option name="closed" value="true" />
+      <created>1755583848605</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1755583848605</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Optimized imports">
+      <option name="closed" value="true" />
+      <created>1755584241315</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1755584241315</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="47371609-a7f5-40d2-9fd3-b0574725ffa1" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="47371609-a7f5-40d2-9fd3-b0574725ffa1">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -651,8 +663,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Forgot to update version number" />
-    <MESSAGE value="Changed directory where the settings will be" />
     <MESSAGE value="GUI for logging on server side" />
     <MESSAGE value="Updated version number" />
     <MESSAGE value="Basic clicking on log entry to see the dice rolled" />
@@ -676,6 +686,8 @@
     <MESSAGE value="Reworked asset loading&#10;&#10;Assets for dice are now dynamically added. In the assets folder, the program looks in the assets folder for folders labeled &quot;d{x}&quot; where x is the number of sides of that dice.  This is good if you want to add, for example, a coin for a d2." />
     <MESSAGE value="Logging list notes update&#10;&#10;The logging list now forcibly deselects all rows. &#10;The notes time stamp is now in local time." />
     <MESSAGE value="Removing unused files.&#10;&#10;Also repurposing one." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing unused files.&#10;&#10;Also repurposing one." />
+    <MESSAGE value="Basic password getter&#10;&#10;Getting the password for the DM logs interface." />
+    <MESSAGE value="Optimized imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized imports" />
   </component>
 </project>

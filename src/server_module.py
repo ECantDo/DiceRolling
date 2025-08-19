@@ -5,7 +5,9 @@ import queue
 
 from flask import Flask, request, jsonify
 import os
-import time
+import json
+import secrets
+import string
 from pathlib import Path
 from dice_logic import roll_dice, sign_entry, append_log, expected_roll
 
@@ -27,6 +29,117 @@ def log_event(msg):
         log_queue.put(msg)
 
 
+# ======================================================================================================================
+# DM server stuff
+# ======================================================================================================================
+_connected_clients = {}  # {client_token: {<Client Data>}}
+
+
+def _generate_code(length: int):
+    chars = string.ascii_uppercase + string.digits
+    return ''.join(secrets.choice(chars) for _ in range(length))
+
+
+def _generate_client_token():
+    return secrets.token_urlsafe(32)
+
+
+_SESSION_PASSWORD = _generate_code(8)  # The password to give to the DM's to get a logs access token
+print(f"{_SESSION_PASSWORD = }")  # TODO: Make it more secure displaying of the token
+
+
+@app.route("/dm-login", methods=["POST"])
+def dm_login():
+    data = request.get_json()
+    session_call = data.get("password", None)
+
+    if session_call is not None:
+        password = session_call.get("password")
+        if password is None or password != _SESSION_PASSWORD:
+            return jsonify({"error": "Invalid password"}), 401
+        # Do valid password logic here
+        client_token = _generate_client_token()
+        _connected_clients[client_token] = {
+            "username": session_call.get("username"),
+            "last_signature": None
+        }
+        return jsonify({
+            "client_token": client_token,
+            "last_signature": None
+        }), 200
+        pass
+
+    session_call = data.get("session", None)
+    if session_call is not None:
+        token = session_call.get("token")
+        if token is None or token not in _connected_clients:
+            return jsonify({"error": "Invalid token"}), 403
+        # Do valid token logic here
+        # TODO: Use the below functions to finish
+        pass
+
+    return jsonify({"error": "Unknown"}), 400
+    pass
+
+
+def _get_last_log_signature(file_path: str):
+    with open(file_path, "rb") as f:
+        f.seek(0, 2)  # go to end of file
+        pointer = f.tell()
+        if pointer == 0:
+            return None  # empty file
+        buffer = b""
+        while pointer > 0:
+            pointer -= 1
+            f.seek(pointer)
+            byte = f.read(1)
+            if byte == b"\n" and buffer:
+                break
+            buffer += byte
+        # The buffer is backwards, so reverse it
+        last_line = buffer[::-1].decode("utf-8")
+        last_entry = json.loads(last_line)
+        return last_entry.get("signature")
+
+
+def _fetch_new_logs(file_path: str, last_signature: str):
+    new_logs = []
+    found_last = last_signature is None  # If None, send everything
+
+    # Open in binary mode for seeking
+    with open(file_path, "rb") as f:
+        f.seek(0, 2)  # Go to end of file
+        pointer = f.tell()
+        buffer = b""
+        while pointer > 0:
+            pointer -= 1
+            f.seek(pointer)
+            byte = f.read(1)
+            if byte == b"\n":
+                if buffer:
+                    line = buffer[::-1].decode("utf-8")  # Reverse buffer
+                    buffer = b""
+                    log_entry = json.loads(line)
+                    if found_last:
+                        new_logs.insert(0, log_entry)  # prepend to keep original order
+                    elif log_entry.get("signature") == last_signature:
+                        found_last = True
+            else:
+                buffer += byte
+
+        # Handle the very first line (start of file)
+        if buffer:
+            line = buffer[::-1].decode("utf-8")
+            log_entry = json.loads(line)
+            if found_last:
+                new_logs.insert(0, log_entry)
+
+    return new_logs
+
+
+# ======================================================================================================================
+# Rolling server stuff
+# ======================================================================================================================
 @app.route("/roll", methods=["POST"])
 def roll_endpoint():
     print("Received roll request:", request.json)
@@ -71,9 +184,7 @@ def _display_local_time(utc_timestamp: str) -> str:
 
 
 def run_server(log_q):
-    # context = ('cert.pem', 'key.pem')  # Use your SSL cert and key here
-    # app.run(host="0.0.0.0", port=5000, ssl_context=context)
-    global SECRET_KEY, log_queue
+    global SECRET_KEY, log_queue  # The secret key is for hashing
     log_queue = log_q
 
     key_b64 = os.environ.get("DICE_LOG_SECRET")

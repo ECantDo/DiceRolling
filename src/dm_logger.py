@@ -1,5 +1,7 @@
 import customtkinter as ctk
 
+import requests
+
 
 class InputPassword(ctk.CTkToplevel):
     def __init__(self, parent, url: str):
@@ -34,13 +36,22 @@ class InputPassword(ctk.CTkToplevel):
         self.destroy()
         pass
 
+    def _send_handshake(self, password: str) -> bool:
+        try:
+            resp = requests.post(
+                self.server_url + "/dm-login",
+                json={"password": password},
+                timeout=5,
+                verify=True
+            )
+            pass
+        except Exception as e:
+            return False
+        pass
+
     pass
 
 
 class DMClient:
-
     def __init__(self, url: str):
-        pass
-
-    def send_handshake(self, password: str, ):
         pass

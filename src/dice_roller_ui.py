@@ -176,7 +176,7 @@ class DiceRollerUI(ctk.CTk):
             try:
                 # Timeout is in seconds
                 resp = requests.post(self.server_url + "/roll", json=payload, timeout=5,
-                                     verify=False)
+                                     verify=True)
                 resp.raise_for_status()
                 data: dict = resp.json()
 

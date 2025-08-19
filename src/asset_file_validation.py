@@ -3,6 +3,11 @@ import urllib.request
 import roller_app
 
 
+# TODO:
+#   - Get all missing assets
+#   - Custom dialog to show the asset files that are missing
+#   - Optional download (since the program should work without needing the assets)
+
 def download_if_missing(file_path: str, url: str):
     """
     Download the file from url only if file_path does not exist.
