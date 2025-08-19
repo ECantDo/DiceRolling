@@ -151,17 +151,6 @@ class LogTable(ctk.CTkFrame):
         self.rows.clear()
         pass
 
-    # def _refresh_row_positions(self, skip=None):
-    #     # Re-grid all rows accounting for notes row at 'skip' grid row
-    #     row_num = 1
-    #     for (frame, labels, note) in self.rows:
-    #         if skip is not None and row_num >= skip:
-    #             row_num += 1  # leave a gap for notes row
-    #         frame.grid_configure(row=row_num)
-    #         for label in labels:
-    #             label.grid_configure(row=0)
-    #         row_num += 1
-
 
 def get_default_color() -> str:
     return "#34495e"

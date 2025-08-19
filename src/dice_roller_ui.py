@@ -5,6 +5,7 @@ from dice_logic import roll_dice
 from settings_manager import SettingsManager
 from script_updater import CURRENT_VERSION
 from dice_animation import DiceApp
+from dm_logger import InputPassword
 
 ctk.set_appearance_mode("dark")  # "dark" or "light"
 ctk.set_default_color_theme("blue")
@@ -53,52 +54,8 @@ class DiceRollerUI(ctk.CTk):
         )
         version_number.pack(side="left", padx=(10, 5))
         # Hamburger button
-        self.hamburger_button = ctk.CTkButton(
-            top_bar,
-            text="☰",
-            width=40,
-            height=40,
-            fg_color="transparent",
-            hover_color=HOVER_BG,
-            font=ctk.CTkFont(size=20, weight="bold"),
-            command=self.show_options_menu
-        )
-        self.hamburger_button.pack(side="right")
 
-        # Create the popup menu frame but keep it hidden
-        self.menu_frame = ctk.CTkFrame(self, fg_color=HOVER_BG, width=150, height=100)
-        self.menu_frame.place_forget()  # hide initially
-
-        # Add menu buttons/options inside menu_frame
-        btn_set_url = ctk.CTkButton(
-            self.menu_frame,
-            text="Set URL",
-            font=used_font,
-            fg_color=HOVER_BG,
-            hover_color=MENU_BG,
-            border_width=0,
-            corner_radius=0,
-            anchor='e',
-            width=120,
-            height=30,
-            command=self.open_url_dialog
-        )
-        btn_set_url.pack(fill="x", pady=0)
-
-        btn_set_name = ctk.CTkButton(
-            self.menu_frame,
-            text="Set Name",
-            font=used_font,
-            fg_color=HOVER_BG,
-            hover_color=MENU_BG,
-            border_width=0,
-            corner_radius=0,
-            anchor='e',
-            width=120,
-            height=30,
-            command=self.open_name_dialog
-        )
-        btn_set_name.pack(fill="x", pady=0)
+        self._setup_menu_button(top_bar)
 
         # === Top Frame: Inputs ===
         self.top_frame = ctk.CTkFrame(main_content_frame, fg_color=MENU_BG)
@@ -165,11 +122,21 @@ class DiceRollerUI(ctk.CTk):
                 self.settings.set("username", self.username)
 
     def startup_dialogs(self):
-        # Open URL dialog first
-        self.open_url_dialog()
+        if not self.settings.get("skip_fetch_url", False):
+            # Open URL dialog first
+            self.open_url_dialog()
         # After URL dialog closes, check username
         if not self.username:
             self.open_name_dialog()
+
+    def open_dm_portal(self):
+        self.menu_frame.place_forget()
+        dialog = InputPassword(self, self.server_url)
+        self.wait_window(dialog)
+        password: str = dialog.password
+        print(f"{password = }")
+        # TODO: Finish function
+        pass
 
     def perform_roll(self):
         dice = None
@@ -252,6 +219,69 @@ class DiceRollerUI(ctk.CTk):
         self.log_text.tag_config("error", foreground="red")
 
         self.log_text.configure(state="disabled")
+        pass
+
+    def _setup_menu_button(self, top_bar):
+        self.hamburger_button = ctk.CTkButton(
+            top_bar,
+            text="☰",
+            width=40,
+            height=40,
+            fg_color="transparent",
+            hover_color=HOVER_BG,
+            font=ctk.CTkFont(size=20, weight="bold"),
+            command=self.show_options_menu
+        )
+        self.hamburger_button.pack(side="right")
+
+        # Create the popup menu frame but keep it hidden
+        self.menu_frame = ctk.CTkFrame(self, fg_color=HOVER_BG, width=150, height=100)
+        self.menu_frame.place_forget()  # hide initially
+
+        # Add menu buttons/options inside menu_frame
+        btn_set_url = ctk.CTkButton(
+            self.menu_frame,
+            text="Set URL",
+            font=used_font,
+            fg_color=HOVER_BG,
+            hover_color=MENU_BG,
+            border_width=0,
+            corner_radius=0,
+            anchor='e',
+            width=120,
+            height=30,
+            command=self.open_url_dialog
+        )
+        btn_set_url.pack(fill="x", pady=0)
+
+        btn_set_name = ctk.CTkButton(
+            self.menu_frame,
+            text="Set Name",
+            font=used_font,
+            fg_color=HOVER_BG,
+            hover_color=MENU_BG,
+            border_width=0,
+            corner_radius=0,
+            anchor='e',
+            width=120,
+            height=30,
+            command=self.open_name_dialog
+        )
+        btn_set_name.pack(fill="x", pady=0)
+
+        btn_open_logs = ctk.CTkButton(
+            self.menu_frame,
+            text="DM Logs",
+            font=used_font,
+            fg_color=HOVER_BG,
+            hover_color=MENU_BG,
+            border_width=0,
+            corner_radius=0,
+            anchor='e',
+            width=120, height=30,
+            command=self.open_dm_portal
+        )
+        btn_open_logs.pack(fill='x', pady=0)
         pass
 
     pass

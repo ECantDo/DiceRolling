@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Logging list notes update&#10;&#10;The logging list now forcibly deselects all rows. &#10;The notes time stamp is now in local time.">
-      <change afterPath="$PROJECT_DIR$/src/dm_logger.py" afterDir="false" />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Removing unused files.&#10;&#10;Also repurposing one.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dice_roller_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice_roller_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dm_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dm_logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logger_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,14 +231,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754791583129</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Local dice rolling working">
-      <option name="closed" value="true" />
-      <created>1754813465492</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1754813465492</updated>
     </task>
     <task id="LOCAL-00013" summary="Fresh logic to log the exact dice rolls">
       <option name="closed" value="true" />
@@ -623,7 +616,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755498718067</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Removing unused files.&#10;&#10;Also repurposing one.">
+      <option name="closed" value="true" />
+      <created>1755580237719</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1755580237719</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -650,7 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reorganizing files" />
     <MESSAGE value="Forgot to update version number" />
     <MESSAGE value="Changed directory where the settings will be" />
     <MESSAGE value="GUI for logging on server side" />
@@ -675,6 +675,7 @@
     <MESSAGE value="File renaming" />
     <MESSAGE value="Reworked asset loading&#10;&#10;Assets for dice are now dynamically added. In the assets folder, the program looks in the assets folder for folders labeled &quot;d{x}&quot; where x is the number of sides of that dice.  This is good if you want to add, for example, a coin for a d2." />
     <MESSAGE value="Logging list notes update&#10;&#10;The logging list now forcibly deselects all rows. &#10;The notes time stamp is now in local time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Logging list notes update&#10;&#10;The logging list now forcibly deselects all rows. &#10;The notes time stamp is now in local time." />
+    <MESSAGE value="Removing unused files.&#10;&#10;Also repurposing one." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing unused files.&#10;&#10;Also repurposing one." />
   </component>
 </project>
