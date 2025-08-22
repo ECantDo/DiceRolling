@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Optimized imports">
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Hotfix to license">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/asset_file_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/asset_file_validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dice_roller_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice_roller_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dm_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dm_logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/script_updater.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/script_updater.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +45,9 @@
     &quot;accountId&quot;: &quot;43a05e5e-31e7-4c64-b4ea-44fc8cd82195&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -233,22 +231,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754791583129</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Removing my settings">
-      <option name="closed" value="true" />
-      <created>1754816815171</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1754816815171</updated>
-    </task>
-    <task id="LOCAL-00016" summary="More ignoring">
-      <option name="closed" value="true" />
-      <created>1754816881834</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1754816881834</updated>
     </task>
     <task id="LOCAL-00017" summary="Should do updates?">
       <option name="closed" value="true" />
@@ -626,7 +608,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755584241315</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="various todo lists and getting started with the server side logic">
+      <option name="closed" value="true" />
+      <created>1755594252910</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1755594252910</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Hotfix to license">
+      <option name="closed" value="true" />
+      <created>1755594498049</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1755594498049</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -663,8 +661,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="GUI for logging on server side" />
-    <MESSAGE value="Updated version number" />
     <MESSAGE value="Basic clicking on log entry to see the dice rolled" />
     <MESSAGE value="In-place menu to show notes&#10;&#10;Currently, in the wrong position, but it's just reversed" />
     <MESSAGE value="Had issues gave up&#10;&#10;Did something really different..." />
@@ -688,6 +684,8 @@
     <MESSAGE value="Removing unused files.&#10;&#10;Also repurposing one." />
     <MESSAGE value="Basic password getter&#10;&#10;Getting the password for the DM logs interface." />
     <MESSAGE value="Optimized imports" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimized imports" />
+    <MESSAGE value="various todo lists and getting started with the server side logic" />
+    <MESSAGE value="Hotfix to license" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hotfix to license" />
   </component>
 </project>

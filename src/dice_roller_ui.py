@@ -281,7 +281,7 @@ class DiceRollerUI(ctk.CTk):
             width=120, height=30,
             command=self.open_dm_portal
         )
-        btn_open_logs.pack(fill='x', pady=0)
+        # btn_open_logs.pack(fill='x', pady=0)
         pass
 
     pass
