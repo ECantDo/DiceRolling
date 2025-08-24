@@ -110,7 +110,7 @@ class DiceRollerUI(ctk.CTk):
 
         self.server_url = dialog.new_value
         if (self.server_url is not None and (len(self.server_url) != 0)) and (not self.server_url.endswith("/roll")):
-            self.server_url = self.server_url.rstrip("/")
+            self.server_url: str = self.server_url.rstrip("/").strip()
 
     def open_name_dialog(self):
         self.menu_frame.place_forget()
@@ -131,10 +131,9 @@ class DiceRollerUI(ctk.CTk):
 
     def open_dm_portal(self):
         self.menu_frame.place_forget()
-        dialog = InputPassword(self, self.server_url)
+        dialog = InputPassword(self, self.server_url, self.username)
         self.wait_window(dialog)
-        password: str = dialog.password
-        print(f"{password = }")
+
         # TODO: Finish function
         pass
 
@@ -281,7 +280,7 @@ class DiceRollerUI(ctk.CTk):
             width=120, height=30,
             command=self.open_dm_portal
         )
-        # btn_open_logs.pack(fill='x', pady=0)
+        btn_open_logs.pack(fill='x', pady=0)
         pass
 
     pass
