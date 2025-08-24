@@ -47,7 +47,7 @@ class InputPassword(ctk.CTkToplevel):
     def _send_handshake(self, password: str) -> bool:
         try:
             resp: Response = requests.post(
-                self.server_url + "/dm-login",
+                self.server_url + "/dm-logs",
                 json={"password": {
                     "password": password,
                     "username": self.username
@@ -103,3 +103,4 @@ class InputPassword(ctk.CTkToplevel):
 class DMClient(ServerLogGUI):
     def __init__(self, log_q: Queue):
         super().__init__(log_q)
+        self.root.title("Server Logs")

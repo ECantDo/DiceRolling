@@ -48,7 +48,7 @@ _SESSION_PASSWORD = _generate_code(8)  # The password to give to the DM's to get
 print(f"{_SESSION_PASSWORD = }")  # TODO: Make it more secure displaying of the token
 
 
-@app.route("/dm-login", methods=["POST"])
+@app.route("/dm-logs", methods=["POST"])
 def dm_login():
     data = request.get_json()
     session_call = data.get("password", None)

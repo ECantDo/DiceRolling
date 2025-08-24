@@ -134,7 +134,32 @@ class DiceRollerUI(ctk.CTk):
         dialog = InputPassword(self, self.server_url, self.username)
         self.wait_window(dialog)
 
-        # TODO: Finish function
+        # Log in success
+        if dialog.session_token:
+            from queue import Queue
+            from dm_logger import DMClient
+
+            log_q = Queue()
+            dm_gui = DMClient(log_q)
+
+            # Background polling
+            poll_job = None
+
+            def poll_server():
+                nonlocal poll_job
+                dialog.request_data(log_q)
+                poll_job = self.after(5000, poll_server)  # Fetch loop (every 2s)
+                pass
+
+            # Stop polling on close
+            def stop_polling():
+                if poll_job:
+                    self.after_cancel(poll_job)
+
+            dm_gui.set_on_close(stop_polling)
+
+            poll_server()
+            dm_gui.gui_main()
         pass
 
     def perform_roll(self):
