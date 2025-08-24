@@ -40,12 +40,11 @@ def _generate_code(length: int):
     return ''.join(secrets.choice(chars) for _ in range(length))
 
 
+_SESSION_PASSWORD = _generate_code(8)  # The password to give to the DM's to get a logs access token
+
+
 def _generate_client_token():
     return secrets.token_urlsafe(64)
-
-
-_SESSION_PASSWORD = _generate_code(8)  # The password to give to the DM's to get a logs access token
-print(f"{_SESSION_PASSWORD = }")  # TODO: Make it more secure displaying of the token
 
 
 @app.route("/dm-logs", methods=["POST"])
@@ -166,7 +165,7 @@ def _fetch_new_logs(file_path: Path, last_signature: str):
 # ======================================================================================================================
 @app.route("/roll", methods=["POST"])
 def roll_endpoint():
-    print("Received roll request:", request.json)
+    # print("Received roll request:", request.json)
 
     data = request.json
     player = data.get("player", "Unknown")
@@ -216,5 +215,7 @@ def run_server(log_q):
         raise RuntimeError("DICE_LOG_SECRET environment variable not set")
 
     SECRET_KEY = base64.urlsafe_b64decode(key_b64)
+
+    print(f"{_SESSION_PASSWORD = }")  # TODO: Make it more secure displaying of the token
 
     app.run(host="0.0.0.0", port=5000)

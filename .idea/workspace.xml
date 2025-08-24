@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Finished dm log window&#10;&#10;I think, might still have bugs..." />
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Menu button fix?&#10;&#10;Attempt 1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_roller_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice_roller_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,22 +234,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754791583129</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Changed version number to test updating">
-      <option name="closed" value="true" />
-      <created>1754818953371</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1754818953371</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Updated to use a now secret key for secure logging :)">
-      <option name="closed" value="true" />
-      <created>1754819606367</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1754819606367</updated>
     </task>
     <task id="LOCAL-00022" summary="Updated to use a now secret key for secure logging :)">
       <option name="closed" value="true" />
@@ -623,7 +611,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756007877494</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Menu button fix?&#10;&#10;Attempt 1">
+      <option name="closed" value="true" />
+      <created>1756008589603</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1756008589603</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Menu button fix?&#10;&#10;Attempt 1">
+      <option name="closed" value="true" />
+      <created>1756008603636</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1756008603636</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -660,7 +664,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version number" />
     <MESSAGE value="Really basic dice roller animation UI, with some assets&#10;&#10;The assets are really basic, but hopefully are done in such a way that the users can customize them as they wish" />
     <MESSAGE value="Roll up to 10d6&#10;&#10;No support for other dice like the d20" />
     <MESSAGE value="Gridded rolling" />
@@ -685,6 +688,7 @@
     <MESSAGE value="Stopped showing the open logs button.&#10;&#10;The feature is incomplete, but the fixes need to be implemented for this week. And I don't know if I have the time to finish implementing, so uploading a version here" />
     <MESSAGE value="Bunch O' request logic.&#10;&#10;Re-added that button because I can now.  And well... request logic" />
     <MESSAGE value="Finished dm log window&#10;&#10;I think, might still have bugs..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished dm log window&#10;&#10;I think, might still have bugs..." />
+    <MESSAGE value="Menu button fix?&#10;&#10;Attempt 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu button fix?&#10;&#10;Attempt 1" />
   </component>
 </project>

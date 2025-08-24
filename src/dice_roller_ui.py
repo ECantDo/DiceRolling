@@ -96,16 +96,10 @@ class DiceRollerUI(ctk.CTk):
         if self.menu_frame.winfo_ismapped():
             self.menu_frame.place_forget()
         else:
-            # Place menu just below the hamburger button, aligned to its right edge
-            btn_x = self.hamburger_button.winfo_x()
-            btn_y = self.hamburger_button.winfo_y() + self.hamburger_button.winfo_height()
-            btn_width = self.hamburger_button.winfo_width()
-
-            # Adjust x so the menu's right edge aligns with the button
-            x = btn_x + btn_width - self.menu_frame.winfo_reqwidth()
-            y = btn_y
-
-            self.menu_frame.place(x=x, y=y)
+            # Position menu under the hamburger
+            x = self.hamburger_button.winfo_x()
+            y = self.hamburger_button.winfo_y() + self.hamburger_button.winfo_height()
+            self.menu_frame.place(in_=self.hamburger_button, relx=0, x=-85, y=y)
             self.menu_frame.lift()
 
     def open_url_dialog(self):
