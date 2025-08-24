@@ -41,7 +41,7 @@ def _generate_code(length: int):
 
 
 def _generate_client_token():
-    return secrets.token_urlsafe(32)
+    return secrets.token_urlsafe(64)
 
 
 _SESSION_PASSWORD = _generate_code(8)  # The password to give to the DM's to get a logs access token
@@ -77,7 +77,6 @@ def dm_login():
             return jsonify({"error": "Invalid token"}), 403
         # Do valid token logic here
         signature: str = session_call.get("signature")
-        # TODO: Use the below functions to finish
         payload: dict = {
 
         }

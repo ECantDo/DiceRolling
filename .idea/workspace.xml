@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Bunch O' request logic.&#10;&#10;Re-added that button because I can now.  And well... request logic">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dice_roller_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dice_roller_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dm_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dm_logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_log_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_log_gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_module.py" afterDir="false" />
-    </list>
+    <list default="true" id="458ce9d0-51b2-4f94-8ea7-620e25a8f130" name="Changes" comment="Finished dm log window&#10;&#10;I think, might still have bugs..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +89,7 @@
       <recent name="E:\PycharmProjects\DiceRoller\helper" />
     </key>
   </component>
-  <component name="RunManager" selected="Batch.start_server">
+  <component name="RunManager" selected="Batch.start_client">
     <configuration name="start_client" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="DiceRoller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -213,8 +207,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Batch.start_server" />
         <item itemvalue="Batch.start_client" />
+        <item itemvalue="Batch.start_server" />
         <item itemvalue="Python.dice_roller_ui" />
         <item itemvalue="Python.dice_animation (1)" />
         <item itemvalue="Python.dice_animation" />
@@ -236,14 +230,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754791583129</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Forgot to update version number">
-      <option name="closed" value="true" />
-      <created>1754818926625</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1754818926625</updated>
     </task>
     <task id="LOCAL-00020" summary="Changed version number to test updating">
       <option name="closed" value="true" />
@@ -629,7 +615,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756006823386</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Finished dm log window&#10;&#10;I think, might still have bugs...">
+      <option name="closed" value="true" />
+      <created>1756007877494</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1756007877494</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -666,7 +660,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Had issues gave up&#10;&#10;Did something really different..." />
     <MESSAGE value="Version number" />
     <MESSAGE value="Really basic dice roller animation UI, with some assets&#10;&#10;The assets are really basic, but hopefully are done in such a way that the users can customize them as they wish" />
     <MESSAGE value="Roll up to 10d6&#10;&#10;No support for other dice like the d20" />
@@ -691,6 +684,7 @@
     <MESSAGE value="Hotfix to license" />
     <MESSAGE value="Stopped showing the open logs button.&#10;&#10;The feature is incomplete, but the fixes need to be implemented for this week. And I don't know if I have the time to finish implementing, so uploading a version here" />
     <MESSAGE value="Bunch O' request logic.&#10;&#10;Re-added that button because I can now.  And well... request logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bunch O' request logic.&#10;&#10;Re-added that button because I can now.  And well... request logic" />
+    <MESSAGE value="Finished dm log window&#10;&#10;I think, might still have bugs..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished dm log window&#10;&#10;I think, might still have bugs..." />
   </component>
 </project>

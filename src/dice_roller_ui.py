@@ -93,14 +93,19 @@ class DiceRollerUI(ctk.CTk):
         pass
 
     def show_options_menu(self):
-        # Toggle the menu visibility on hamburger click
         if self.menu_frame.winfo_ismapped():
             self.menu_frame.place_forget()
         else:
-            # Position menu_frame under the hamburger button
-            x = self.hamburger_button.winfo_rootx() - self.winfo_rootx()
-            y = self.hamburger_button.winfo_rooty() - self.winfo_rooty() + self.hamburger_button.winfo_height()
-            self.menu_frame.place(x=x - 85, y=y)  # Adjust x to align menu properly
+            # Place menu just below the hamburger button, aligned to its right edge
+            btn_x = self.hamburger_button.winfo_x()
+            btn_y = self.hamburger_button.winfo_y() + self.hamburger_button.winfo_height()
+            btn_width = self.hamburger_button.winfo_width()
+
+            # Adjust x so the menu's right edge aligns with the button
+            x = btn_x + btn_width - self.menu_frame.winfo_reqwidth()
+            y = btn_y
+
+            self.menu_frame.place(x=x, y=y)
             self.menu_frame.lift()
 
     def open_url_dialog(self):
